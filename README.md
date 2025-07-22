@@ -6,13 +6,37 @@
 ██████  ██   ██ ███████ 
 ```
 
-# 🔧 Brabus Recon Suite (BRS)
+<sub>project: brabus recon suite (brs) | company: easyprotech llc (www.easypro.tech) | developer: brabus | created: 22.07.2025 03:06:28 | version: 2.0 | telegram: https://t.me/easyprotechaifactory</sub>
+
+# Brabus Recon Suite (BRS) v2.0
 
 **Professional Network Reconnaissance & Penetration Testing Toolkit**
 
 *by EasyProTech LLC (www.easypro.tech)*
 
-Powerful suite of tools for network reconnaissance, vulnerability assessment and penetration testing of local networks.
+Advanced suite of tools for network reconnaissance, domain analysis, vulnerability assessment and penetration testing with enhanced user experience and professional-grade interface.
+
+## 🚀 What's New in V2.0
+
+### ✨ **Major Enhancements**
+- **Domain Reconnaissance Module** - Comprehensive domain analysis capabilities
+- **Professional Interface** - Clean, emoji-free menus for serious professionals
+- **Advanced Progress Indicators** - Live timers and cancellation support
+- **Enhanced System Information** - Detailed hardware, network, and security reporting
+- **Improved Error Handling** - Robust interrupt handling and cleanup procedures
+- **Streamlined Architecture** - Optimized code structure and performance
+
+### 🎯 **Core Improvements**
+- **Unified Spinner System** - Consistent progress indication across all modules
+- **Professional Menu Design** - Removed emojis from menu items for business use
+- **Better Resource Management** - Enhanced cleanup and signal handling
+- **Optimized Performance** - Reduced redundancy and improved speed
+- **Enhanced Documentation** - Complete feature coverage and usage examples
+
+### 📝 **Development Notes**
+- **Language Support**: Temporarily simplified to English-only during V2.0 development
+- **Legacy Compatibility**: V1.0 language files remain available in project history
+- **Future Roadmap**: Multi-language support will be restored in future releases
 
 ## 🚨 CRITICAL LEGAL WARNING
 
@@ -22,23 +46,18 @@ Powerful suite of tools for network reconnaissance, vulnerability assessment and
 
 Using this software to scan, probe, or attack networks, systems, or services that you do not own or have explicit written permission to test is **ILLEGAL** and may result in:
 
-- **Criminal charges** and prosecution under computer crime laws (CFAA, etc.)
-- **Substantial fines** (potentially millions of dollars depending on jurisdiction)
-- **Prison time** (multiple years depending on severity and jurisdiction)
-- **Permanent criminal record** affecting future employment and travel opportunities
-- **Civil lawsuits** for damages, business disruption, and legal costs
+- **Criminal charges** and prosecution under computer crime laws
+- **Substantial fines** (potentially millions of dollars)
+- **Prison time** (multiple years depending on severity)
+- **Permanent criminal record**
+- **Civil lawsuits** for damages and legal costs
 
 **AUTHORIZED USE ONLY:**
 - Your own networks and systems
 - With explicit written authorization from system owners
 - Within scope of authorized penetration testing contracts
 - As part of legitimate bug bounty programs
-- In controlled educational environments with proper supervision
-
-**COMPLETE DISCLAIMER OF LIABILITY:**
-EasyProTech LLC, its officers, employees, and contributors provide this software "AS IS" with NO WARRANTY and are NOT RESPONSIBLE for any damage, harm, legal consequences, or misuse. Users accept FULL RESPONSIBILITY and agree to indemnify EasyProTech LLC.
-
-**READ BEFORE USE:** See LEGAL.md, ETHICS.md, and DISCLAIMER.md for complete terms.
+- In controlled educational environments
 
 ## 📦 Installation
 
@@ -54,340 +73,374 @@ cd brs
 ./main.sh
 ```
 
-The toolkit works from any directory - all paths are automatically resolved relative to the project location.
-
-## 📸 Screenshots
-
-### 🌐 Network Discovery
-![Local Network Scanning](screenshots/local_network_scanning.jpg)
-
-### 🔍 Port Scanner
-![Detailed Port Scanning](screenshots/detailed_port_scanning.jpg)
-
-### 🛡️ Vulnerability Scanner
-![Vulnerability Scanner](screenshots/vulnerability_scanner.jpg)
-
-### 🖥️ System Information
-![System Information Report](screenshots/system_information_report.jpg)
-
-### ⚔️ Attack Tools
-![Attack Tools](screenshots/attack_tools.jpg)
-
-### 📊 Results & Settings
-![Results Menu](screenshots/result_menu.jpg)
-![Settings](screenshots/settings.jpg)
-
-## 📁 Project Structure
-
-```
-brs/
-├── main.sh                    # Main control script
-├── scripts/                   # Executable modules
-│   ├── network_discovery.sh   # Network reconnaissance
-│   ├── port_scanner.sh        # Port scanning
-│   ├── vulnerability_scanner.sh # Vulnerability assessment
-│   ├── system_info.sh         # System information gathering
-│   └── attack_tools.sh        # Penetration testing tools
-├── results/                   # Auto-generated scan results
-├── wordlists/                 # Password dictionaries
-├── configs/                   # Configuration files
-├── languages/                 # Localization files (en/ru/de/fr/es/zh/tr)
-├── tools/                     # Additional tools
-└── README.md                  # This documentation
-```
+All paths are automatically resolved relative to the project location.
 
 ## 🎯 Core Modules
 
-### 1. 🌐 Network Discovery
-**Discover devices in local networks**
+### 1. Network Discovery
+**Comprehensive local network reconnaissance**
 
-- Automatic network range detection
-- Ping sweep scanning
-- ARP scanning for hidden devices
-- Quick port scanning of found hosts
-- Live hosts list saving
+**Features:**
+- Automatic network interface detection
+- Intelligent network range identification
+- Multi-method host discovery (ping sweep, ARP scan)
+- Fast port scanning of discovered hosts
+- MAC address vendor identification
+- Detailed network topology mapping
+- Professional progress indicators with live timers
 
-### 2. 🔍 Port Scanner
-**Detailed port scanning**
+**Improvements in V2.0:**
+- Enhanced host detection algorithms
+- Better network interface handling
+- Improved scan performance
+- Professional progress visualization
 
-**Scanning modes:**
-- Quick (top 1000 ports)
-- Full (all 65535 ports)
-- Stealth SYN scanning
-- UDP scanning
-- Service version detection
-- Aggressive scanning (-A)
-- Tor scanning
-- Mass scanning (masscan)
+### 2. Port Scanning
+**Advanced port scanning capabilities**
 
-### 3. 🛡️ Vulnerability Scanner
-**Security vulnerabilities detection**
+**Scanning Modes:**
+- **Fast Scan** - Top 1000 ports for quick reconnaissance
+- **Full Scan** - Complete 65535 port range analysis
+- **Stealth SYN Scan** - Covert reconnaissance techniques
+- **UDP Scanning** - UDP service discovery
+- **Service Version Detection** - Application fingerprinting
+- **Aggressive Scanning** - OS detection and script scanning
+- **Tor Scanning** - Anonymous scanning through Tor network
+- **Mass Scanning** - High-speed scanning with masscan
+- **Batch Operations** - Scan all discovered hosts automatically
 
-**Check types:**
-- NSE nmap scripts for vulnerabilities
-- Nikto for web vulnerabilities
-- SQLmap for SQL injections
-- SMB vulnerabilities (EternalBlue, MS08-067)
-- Weak passwords checking (SSH, FTP, Telnet)
-- Open network resources discovery
-- SSL/TLS vulnerabilities
-- Comprehensive scanning
+**V2.0 Enhancements:**
+- Unified progress indication system
+- Better timeout handling
+- Enhanced result formatting
+- Professional interface design
 
-### 4. 🖥️ System Information
-**Comprehensive system reconnaissance**
+### 3. Domain Reconnaissance (NEW in V2.0)
+**Comprehensive domain intelligence gathering**
 
-**Information gathering:**
-- System details (OS, kernel, architecture, uptime)
-- Hardware information (CPU, memory, disk usage)
-- Network configuration (interfaces, connections, routing)
-- Security status (firewall, SSH, fail2ban, SELinux)
-- Running services and failed services
-- Connected devices (USB, PCI, WiFi, Bluetooth)
+**Core Capabilities:**
+- **Basic Domain Information** - DNS records and infrastructure analysis
+- **DNS Records Enumeration** - Complete DNS record discovery (A, AAAA, MX, NS, TXT, etc.)
+- **Subdomain Discovery** - Advanced subdomain enumeration techniques
+- **Email Harvesting** - Email address discovery from various sources
+- **Zone Transfer Testing** - DNS zone transfer vulnerability assessment
+- **Certificate Transparency** - SSL certificate log analysis
+- **WHOIS Information** - Domain registration and ownership data
+- **Web Technology Detection** - Technology stack identification
+- **Social Media Discovery** - Social media presence analysis
+- **Comprehensive Domain Scan** - All-in-one domain assessment
 
-### 5. ⚔️ Attack Tools
-**Active penetration testing tools**
+**Technical Features:**
+- Certificate transparency log integration
+- Advanced subdomain discovery algorithms
+- Email pattern recognition
+- Technology fingerprinting
+- Professional progress indicators
+
+### 4. Vulnerability Assessment
+**Professional security vulnerability detection**
+
+**Assessment Types:**
+- **NSE Nmap Scripts** - Advanced vulnerability detection scripts
+- **Web Vulnerability Scanning** - Nikto-based web application testing
+- **SQL Injection Testing** - SQLmap integration for database security
+- **SMB Vulnerability Scanning** - Windows network service testing
+- **SSH Security Testing** - SSH configuration and credential testing
+- **FTP Security Assessment** - FTP service vulnerability analysis
+- **Telnet Security Testing** - Legacy protocol security assessment
+- **Network Shares Discovery** - SMB/NFS share enumeration
+- **SSL/TLS Analysis** - Cryptographic protocol assessment
+- **Comprehensive Scanning** - Automated multi-vector testing
+- **Automated Host Assessment** - Batch vulnerability testing
+
+**V2.0 Improvements:**
+- Enhanced vulnerability detection algorithms
+- Better result categorization
+- Professional progress tracking
+- Improved error handling
+
+### 5. System Information
+**Comprehensive system reconnaissance and analysis**
+
+**Information Categories:**
+- **Full System Report** - Complete system analysis with executive summary
+- **System Information** - OS, kernel, architecture, hostname, uptime details
+- **Hardware Information** - CPU, memory, storage analysis
+- **Network Configuration** - Interface details, routing tables, active connections
+- **Security Status** - Firewall status, user activity, authentication logs
+- **Running Services** - Service status analysis and monitoring
+- **Connected Devices** - USB, PCI, WiFi, Bluetooth device enumeration
+
+**V2.0 Features:**
+- Professional progress indicators for long operations
+- Enhanced data collection algorithms
+- Better categorization and formatting
+- Timestamped result files
+- Executive summary generation
+
+### 6. Attack Tools
+**Professional penetration testing capabilities**
 
 **⚠️ AUTHORIZED TESTING ONLY!**
 
-**Brute force attacks:**
-- SSH, FTP, HTTP Basic Auth
-- Telnet, RDP brute force
-- Custom wordlists support
+**Attack Categories:**
+- **Credential Attacks** - SSH, FTP, HTTP, Telnet, RDP brute force
+- **Network Attacks** - DoS attacks, ARP spoofing, MITM operations
+- **Web Application Attacks** - Directory brute forcing, web-based attacks
+- **Wireless Attacks** - WiFi security assessment and handshake capture
+- **Custom Wordlists** - Flexible credential dictionary support
 
-**Network attacks:**
-- DoS attacks (TCP SYN Flood)
-- ARP Spoofing
-- MITM attacks via ettercap
-- Directory bruteforcing
+**V2.0 Enhancements:**
+- Professional progress tracking
+- Better attack success reporting
+- Enhanced logging and documentation
+- Improved safety measures
 
-**Specialized attacks:**
-- WiFi attacks (handshake capture, deauth)
-- Malicious file generation
+## 🛠️ Technical Requirements
 
-## 🛠️ Required Tools
+### System Dependencies
+- **nmap** - Network mapping and port scanning
+- **masscan** - High-speed port scanning
+- **hydra** - Network authentication cracking
+- **nikto** - Web server vulnerability scanner
+- **sqlmap** - SQL injection testing tool
+- **dig** - DNS lookup utility
+- **whois** - Domain registration lookup
+- **curl** - HTTP/HTTPS client for web requests
+- **jq** - JSON processing for API responses
+- **john** - Password cracking utilities
+- **ettercap** - Network security toolkit
+- **aircrack-ng** - WiFi security auditing
 
-The toolkit uses standard penetration testing tools:
-- **nmap** - port and service scanning
-- **masscan** - fast port scanning
-- **hydra** - brute force attacks
-- **nikto** - web vulnerability scanning
-- **sqlmap** - SQL injection testing
-- **john** - password cracking
-- **ettercap** - MITM attacks
-- **aircrack-ng** - WiFi auditing
-- **wireshark** - traffic analysis
+### System Requirements
+- Ubuntu 22.04+ or compatible Linux distribution
+- Sudo privileges for advanced scanning techniques
+- Minimum 4GB RAM for optimal performance
+- 5GB free disk space for results and wordlists
+- Network interfaces for wireless testing (optional)
 
-## 📊 Results
+## 📊 Results Management
 
-All results are automatically saved in the `results/` directory with timestamps:
+All scan results are automatically saved with timestamps:
 
 ```
 results/
-├── live_hosts_20241229_143021.txt
-├── network_scan_20241229_143045.txt
-├── vuln_scan_192.168.1.1_20241229_143102.txt
-└── ssh_attack_192.168.1.100_20241229_143205.txt
+├── 20250722-030628_network_scan.txt
+├── 20250722-030645_domain_recon_example.com.txt
+├── 20250722-030702_vuln_scan_192.168.1.100.txt
+├── 20250722-030715_system_info.txt
+└── 20250722-030730_port_scan_192.168.1.0-24.txt
 ```
 
-## 🔧 Configuration
+**File Naming Convention:**
+- `YYYYMMDD-HHMMSS_operation_target.txt`
+- Automatic result categorization
+- Timestamped for audit trails
+- Professional formatting for reporting
 
-### System Requirements
-- Ubuntu 22.04+ or similar Linux distribution
-- Sudo privileges (configured without password prompt)
-- Minimum 2GB free space
-- Network interfaces for WiFi attacks (if needed)
+## 🔧 Configuration Management
 
-### Language Support
-- 🇺🇸 English (en)
-- 🇷🇺 Russian (ru)
-- 🇩🇪 German (de)
-- 🇫🇷 French (fr)
-- 🇪🇸 Spanish (es)
-- 🇨🇳 Chinese Simplified (zh)
-- 🇹🇷 Turkish (tr)
-- Auto-detection based on system locale
-- Configuration in `configs/language.conf`
+### Language Configuration (V2.0 Development)
+During V2.0 development, the system operates in **English-only mode** for:
+- Simplified development and testing
+- Consistent user experience
+- Reduced complexity during feature development
 
-## 🚨 Security Guidelines
+**Note:** Multi-language support from V1.0 is preserved and will be restored in future releases. Language files are available in the project repository for reference.
 
-1. **Use only on your own networks**
-2. **Get written permission** before testing external systems
-3. **Do not run DoS attacks** on critical systems
-4. **Follow local laws and regulations**
-5. **Document all activities** for reporting
+### Professional Interface Settings
+- Clean, emoji-free menu design
+- Consistent progress indication
+- Professional color schemes
+- Business-appropriate formatting
 
-## 📈 Typical Workflow
+## 🚀 Usage Examples
 
-1. **Network reconnaissance:**
-   ```bash
-   ./main.sh → 1) Network Discovery
-   ```
-
-2. **Detailed scanning:**
-   ```bash
-   ./main.sh → 2) Port Scanner → 9) Scan all hosts
-   ```
-
-3. **Vulnerability assessment:**
-   ```bash
-   ./main.sh → 3) Vulnerability Scanner → 11) Auto-scan
-   ```
-
-4. **Active testing:**
-   ```bash
-   ./main.sh → 4) Attack Tools → select specific attack
-   ```
-
-5. **Results analysis:**
-   ```bash
-   ./main.sh → 6) Results
-   ```
-
-## 🔍 Usage Examples
-
-### Quick network scan
+### Complete Network Assessment
 ```bash
-# Automatic discovery and scanning
 ./main.sh
-# Select option 1 (Network Discovery)
+# 1) Network Discovery -> Discover all network hosts
+# 2) Port Scanning -> 9) Scan all discovered hosts
+# 4) Vulnerability Search -> 11) Auto-scan all hosts
+# 7) Results -> Review comprehensive findings
 ```
 
-### Detailed host scanning
+### Domain Intelligence Gathering
 ```bash
-# For specific target
-nmap -A -T4 192.168.1.100
+./main.sh
+# 3) Domain Reconnaissance
+# 10) Comprehensive Domain Scan
+# Enter target domain: example.com
 ```
 
-### SMB vulnerability check
+### System Analysis
 ```bash
-nmap --script smb-vuln* -p445 192.168.1.0/24
+./main.sh
+# 5) System Information
+# 1) Full System Report -> Complete system analysis
 ```
 
-### SSH brute force
+### Professional Vulnerability Assessment
 ```bash
-hydra -L wordlists/common_users.txt -P wordlists/common_passwords.txt 192.168.1.100 ssh
+./main.sh
+# 4) Vulnerability Search
+# 10) Comprehensive vulnerability scanning
+# Review results in timestamped files
 ```
+
+## 📈 Professional Workflow
+
+### 1. Reconnaissance Phase
+```bash
+# Network discovery and mapping
+./main.sh → 1) Network Discovery
+# Domain intelligence gathering
+./main.sh → 3) Domain Reconnaissance
+```
+
+### 2. Scanning Phase
+```bash
+# Comprehensive port analysis
+./main.sh → 2) Port Scanning → 9) Scan all hosts
+# System information gathering
+./main.sh → 5) System Information → 1) Full Report
+```
+
+### 3. Assessment Phase
+```bash
+# Vulnerability identification
+./main.sh → 4) Vulnerability Search → 10) Comprehensive
+# Security configuration analysis
+```
+
+### 4. Testing Phase (Authorized Only)
+```bash
+# Controlled penetration testing
+./main.sh → 6) Attack Tools → Select appropriate tests
+```
+
+### 5. Reporting Phase
+```bash
+# Results compilation and analysis
+./main.sh → 7) Results → Review all findings
+```
+
+## 🔍 Advanced Features
+
+### Progress Indication System
+- **Live Timers** - Real-time operation duration tracking
+- **Cancellation Support** - Ctrl+C handling with proper cleanup
+- **Professional Animation** - Unicode spinner indicators
+- **Operation Status** - Clear completion messaging
+
+### Professional Interface Design
+- **Clean Menus** - Emoji-free, business-appropriate design
+- **Consistent Formatting** - Standardized output across modules
+- **Color Coding** - Professional color schemes for different message types
+- **Structured Output** - Organized, readable result presentation
+
+### Enhanced Error Handling
+- **Graceful Interruption** - Proper signal handling
+- **Resource Cleanup** - Automatic temporary file management
+- **Error Recovery** - Robust handling of unexpected conditions
+- **Logging Integration** - Comprehensive error documentation
 
 ## 🆘 Troubleshooting
 
-If you encounter issues:
+### Common Issues and Solutions
 
-1. Check file permissions (`chmod +x *.sh`)
-2. Ensure all dependencies are installed
-3. Verify network settings
-4. Review logs in `results/` directory
-5. Check sudo configuration
+**Permission Issues:**
+```bash
+chmod +x main.sh scripts/*.sh
+```
 
-## 📚 Additional Resources
+**Missing Dependencies:**
+```bash
+./main.sh → 8) Settings → 2) Check Tools
+```
+
+**Network Access Issues:**
+- Verify network connectivity
+- Check firewall settings
+- Ensure proper interface configuration
+
+**Performance Issues:**
+- Increase system resources
+- Reduce scanning parallelism
+- Use targeted scanning instead of broad sweeps
+
+## 📚 Documentation References
 
 - [Nmap Documentation](https://nmap.org/docs.html)
-- [Hydra Manual](https://github.com/vanhauser-thc/thc-hydra)
-- [Nikto Documentation](https://cirt.net/Nikto2)
-- [SQLmap User Manual](https://sqlmap.org/)
+- [Domain Reconnaissance Techniques](https://www.owasp.org/index.php/Information_Gathering)
+- [Vulnerability Assessment Methodologies](https://www.sans.org/reading-room/whitepapers/testing/)
+- [Professional Penetration Testing Standards](https://www.pentest-standard.org/)
 
-**Remember: With great power comes great responsibility!**
+## 🔄 Version History
 
-*Use these tools ethically and within legal boundaries.*
+### V2.0 (Current)
+- **Domain Reconnaissance Module** - Complete domain analysis capabilities
+- **Professional Interface** - Business-appropriate menu design
+- **Enhanced Progress System** - Live timers and cancellation support
+- **Improved System Analysis** - Comprehensive system information gathering
+- **Streamlined Development** - English-only mode for development phase
 
-## ⚖️ LEGAL DISCLAIMER AND USER AGREEMENT
+### V1.0 (Legacy)
+- Basic network reconnaissance
+- Multi-language support (7 languages)
+- Core vulnerability scanning
+- Basic attack tools
+- Foundation architecture
 
-**🚨 CRITICAL: READ CAREFULLY BEFORE DOWNLOADING OR USING**
+## ⚖️ LEGAL DISCLAIMER
 
-**BY DOWNLOADING, INSTALLING, OR USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE LEGALLY BOUND BY ALL TERMS AND CONDITIONS.**
+**🚨 CRITICAL: READ CAREFULLY BEFORE USE**
 
-### AUTHORIZED USERS ONLY:
-- ✅ **Cybersecurity professionals** with explicit written authorization
-- ✅ **Penetration testers** working under signed contracts
-- ✅ **System administrators** testing their own infrastructure
-- ✅ **Bug bounty hunters** within program scope and rules
-- ✅ **Security researchers** on owned/authorized systems only
-- ✅ **Students** in controlled educational environments with supervision
+**BY USING THIS SOFTWARE, YOU AGREE TO BE LEGALLY BOUND BY ALL TERMS.**
 
-### ABSOLUTELY PROHIBITED:
-- ❌ **Unauthorized scanning** of any networks or systems
-- ❌ **Unauthorized penetration testing** (even "harmless" reconnaissance)
-- ❌ **Corporate espionage** or competitive intelligence gathering
-- ❌ **Personal attacks** or vendettas against individuals/organizations
-- ❌ **Proof-of-concept attacks** on others' systems
-- ❌ **Any illegal activities** under local, national, or international law
+### AUTHORIZED USE REQUIREMENTS:
+- ✅ Explicit written authorization for target systems
+- ✅ Professional penetration testing contracts
+- ✅ Authorized security research activities
+- ✅ Educational use in controlled environments
+- ✅ Bug bounty programs within scope
 
-### LEGAL CONSEQUENCES OF MISUSE:
-Unauthorized use may result in prosecution under:
-- **United States**: Computer Fraud and Abuse Act (18 U.S.C. § 1030)
-- **European Union**: Directive 2013/40/EU on attacks against information systems
-- **United Kingdom**: Computer Misuse Act 1990
-- **Russian Federation**: Criminal Code Articles 272-274 (computer crimes)
-- **People's Republic of China**: Criminal Law Articles 285-287, Cybersecurity Law
-- **International**: Council of Europe Convention on Cybercrime
-- **Plus applicable state, provincial, and national laws worldwide**
+### STRICTLY PROHIBITED:
+- ❌ Unauthorized network scanning or testing
+- ❌ Attacks on systems without permission
+- ❌ Malicious or illegal activities
+- ❌ Violation of applicable laws and regulations
 
-### YOUR LEGAL OBLIGATIONS:
-By using this software, you declare under penalty of perjury that:
-1. **You own the target systems** OR have explicit written authorization
-2. **You understand applicable laws** in your jurisdiction
-3. **You accept full legal responsibility** for your actions and their consequences
-4. **You will indemnify and hold harmless** EasyProTech LLC from any claims
-5. **You will cease use immediately** if authorization is revoked
+### LEGAL CONSEQUENCES:
+Unauthorized use may result in prosecution under computer crime laws worldwide, including substantial fines and imprisonment.
 
-### COMPLETE DISCLAIMER OF LIABILITY:
-**EASYPROTECH LLC, ITS OFFICERS, DIRECTORS, EMPLOYEES, AND CONTRIBUTORS:**
-- Provide this software "AS IS" with **NO WARRANTY** of any kind
-- Are **NOT RESPONSIBLE** for any damage, harm, or legal consequences
-- **EXPRESSLY DISCLAIM** all liability for misuse of this software
-- **MAXIMUM LIABILITY** for any claim shall not exceed $1.00
+### COMPLETE LIABILITY DISCLAIMER:
+EasyProTech LLC provides this software "AS IS" with NO WARRANTY and accepts NO RESPONSIBILITY for misuse, damage, or legal consequences.
 
-**YOU USE THIS SOFTWARE AT YOUR OWN RISK AND BEAR FULL RESPONSIBILITY.**
+**YOU BEAR FULL RESPONSIBILITY FOR YOUR ACTIONS.**
 
-### INDEMNIFICATION:
-You agree to **INDEMNIFY, DEFEND, AND HOLD HARMLESS** EasyProTech LLC and its affiliates from any claims, damages, losses, liabilities, costs, or expenses (including attorney's fees) arising from your use or misuse of this software.
+## 📞 Support Policy
 
-### REPORTING MISUSE:
-If you become aware of misuse of this software, report it immediately to:
-- Local law enforcement agencies
-- Relevant cybersecurity authorities (FSB, MVD for Russian Federation)
-- Software maintainers via @easyprotechaifactory (Telegram)
+**No Support Provided**: This project is released as-is without support, consultation, or assistance.
 
-### COOPERATION WITH AUTHORITIES:
-EasyProTech LLC is ready for full cooperation with law enforcement agencies of the Russian Federation in identifying and prosecuting those who use this software unethically.
-
----
-
-**⚠️ FINAL WARNING: If you cannot make the required legal declarations above, DO NOT USE THIS SOFTWARE. When in doubt, consult with qualified legal counsel familiar with cybersecurity law.**
-
-**The goal of security testing is to improve security, not cause harm. Use responsibly or face serious legal consequences.**
-
-## 📞 Support
-
-I do not provide support. I do not consult — not for free, not for money, not in any form.
-
-Please don't ask for help, fixes, or explanations — this project is released as-is.
-
-If someone wants to help with development — contributions are welcome. But there are no obligations from my side whatsoever.
+**Community Contributions**: Development contributions are welcome but not obligated.
 
 ## 📜 License
 
-**DUAL LICENSE STRUCTURE** – Enhanced Legal Protection
+**DUAL LICENSE STRUCTURE**
 
-This software is available under **TWO LICENSE OPTIONS**:
+### GPLv3 License (Open Source)
+- Educational, research, and open-source projects
+- Copyleft compliance required
 
-### 🆓 GPLv3 License (Open Source)
-- **For**: Educational, research, personal, and open-source projects
-- **Requirements**: Copyleft compliance, source code disclosure for derivatives
-- **Default**: Applies automatically if no commercial license obtained
+### Commercial License
+- Commercial entities and proprietary projects
+- Contact: @easyprotechaifactory (Telegram)
 
-### 💼 Commercial License
-- **For**: Commercial entities, proprietary projects, closed-source derivatives  
-- **Benefits**: No copyleft requirements, proprietary use allowed
-- **Contact**: @easyprotechaifactory (Telegram)
-
-**GPLv3 provides enhanced legal protection** through:
-- Copyleft enforcement preventing unauthorized commercialization
-- Enhanced attribution requirements
-- Automatic license termination for violations
-- International legal framework recognition
-
-**See LICENSE file for complete dual-license terms.**
+**See LICENSE file for complete terms.**
 
 ---
 
-**Released by EasyProTech LLC | Lead Developer: brabus | Licensed under GPLv3 + Commercial | @easyprotechaifactory** 
+**Brabus Recon Suite V2.0** | **EasyProTech LLC** | **Lead Developer: brabus** | **@easyprotechaifactory**
+
+*Professional Network Reconnaissance for Authorized Security Testing* 

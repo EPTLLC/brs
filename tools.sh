@@ -1,7 +1,7 @@
 #!/bin/bash
 # Brabus Recon Suite (BRS) - Tool Management Module
-# Company: EasyProTech LLC (www.easypro.tech)
-# Version: 1.0
+# company: EasyProTech LLC (www.easypro.tech)
+# version: 1.0
 
 # Color definitions (if not already defined)
 if [ -z "$RED" ]; then
@@ -14,27 +14,7 @@ if [ -z "$RED" ]; then
     NC='\033[0m'
 fi
 
-# Progress bar and timer functions
-show_progress() {
-    local current=$1
-    local total=$2
-    local message=$3
-    local start_time=$4
-    
-    local percent=$((current * 100 / total))
-    local filled=$((percent / 5))
-    local empty=$((20 - filled))
-    
-    # Calculate elapsed time
-    local elapsed=$(($(date +%s) - start_time))
-    local mins=$((elapsed / 60))
-    local secs=$((elapsed % 60))
-    
-    printf "\r\033[K"  # Clear line
-    printf "${CYAN}[$(printf '%*s' $filled | tr ' ' '█')$(printf '%*s' $empty | tr ' ' '░')] %3d%% (%d/%d) %s ${YELLOW}[%02d:%02d]${NC}" \
-           $percent $current $total "$message" $mins $secs
-}
-
+# Show spinner for background operations with live timer and cancellation message  
 show_spinner() {
     local pid=$1
     local message=$2
@@ -42,15 +22,22 @@ show_spinner() {
     local spin_chars="⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
     local i=0
     
+    echo -e "${CYAN}$message (Ctrl+C to cancel)${NC}"
+    
     while kill -0 $pid 2>/dev/null; do
         local elapsed=$(($(date +%s) - start_time))
         local mins=$((elapsed / 60))
         local secs=$((elapsed % 60))
-        printf "\r\033[K${CYAN}${spin_chars:$i:1} %s ${YELLOW}[%02d:%02d]${NC}" "$message" $mins $secs
-        i=$(( (i+1) % ${#spin_chars} ))
+        
+        printf "\r${CYAN}${spin_chars:$i:1} $message [%02d:%02d]${NC}" $mins $secs
+        i=$(( (i + 1) % ${#spin_chars} ))
         sleep 0.1
     done
-    printf "\r\033[K"  # Clear line
+    
+    local elapsed=$(($(date +%s) - start_time))
+    local mins=$((elapsed / 60))
+    local secs=$((elapsed % 60))
+    printf "\r${GREEN}✅ $message completed [%02d:%02d]${NC}\n" $mins $secs
 }
 
 # Required tools list with alternative package names
@@ -117,7 +104,7 @@ install_single_tool() {
     local total=$4
     local start_time=$5
     
-    show_progress $current $total "Installing $tool..." $start_time
+    # show_progress $current $total "Installing $tool..." $start_time # This line is removed as per the new_code
     
     case $pkg_manager in
         "apt")
@@ -233,11 +220,11 @@ install_missing_tools() {
         current=$((current + 1))
         
         if install_single_tool "$tool" "$pkg_manager" $current $total $start_time; then
-            show_progress $current $total "✅ $tool installed" $start_time
+            # show_progress $current $total "✅ $tool installed" $start_time # This line is removed as per the new_code
             echo ""
             installed_tools+=("$tool")
         else
-            show_progress $current $total "❌ $tool failed" $start_time
+            # show_progress $current $total "❌ $tool failed" $start_time # This line is removed as per the new_code
             echo ""
             failed_tools+=("$tool")
         fi

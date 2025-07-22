@@ -2,9 +2,12 @@
 
 # Brabus Recon Suite (BRS) - Port Scanner Module
 # Comprehensive port scanning and service enumeration
-# Company: EasyProTech LLC (www.easypro.tech)
-# Author: brabus
-# Version: 1.0
+# company: EasyProTech LLC (www.easypro.tech)
+# repository: https://github.com/EPTLLC/brs
+# contact: mail.easypro.tech@gmail.com
+# telegram: https://t.me/easyprotechaifactory
+# author: brabus
+# version: 2.0
 
 # ⚠️ LEGAL WARNING ⚠️
 # UNAUTHORIZED SCANNING IS ILLEGAL
@@ -131,7 +134,6 @@ fast_scan() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_fast_scan_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}$PORT_FAST_SCANNING $TARGET...${NC}"
     echo -e "${CYAN}$TIMEOUT_SCANNING_WITH ${HOST_TIMEOUT}s${NC}"
     
     timeout $HOST_TIMEOUT nmap -F --host-timeout 10s -T4 "$TARGET" > "$OUTPUT_FILE" 2>&1 &
@@ -162,7 +164,6 @@ full_scan() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_full_scan_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}$PORT_FULL_SCANNING...${NC}"
     echo -e "${YELLOW}$TIMEOUT_SCANNING_WITH ${DEFAULT_TIMEOUT}s (5 minutes)${NC}"
     echo -e "${CYAN}This scans all 65535 ports - it may take several minutes${NC}"
     
@@ -194,7 +195,6 @@ stealth_scan() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_stealth_scan_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}$PORT_STEALTH_SCANNING $TARGET...${NC}"
     echo -e "${CYAN}$TIMEOUT_SCANNING_WITH ${DEFAULT_TIMEOUT}s (stealth mode)${NC}"
     
     timeout $DEFAULT_TIMEOUT nmap -sS --host-timeout 30s -T2 "$TARGET" > "$OUTPUT_FILE" 2>&1 &
@@ -225,8 +225,6 @@ udp_scan() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_udp_scan_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}$PORT_UDP_SCANNING $TARGET...${NC}"
-    echo -e "${YELLOW}UDP scanning is slow, please wait...${NC}"
     sudo nmap -sU --top-ports 100 -T4 "$TARGET" | tee "$OUTPUT_FILE"
     echo -e "${GREEN}$ATTACK_RESULTS_SAVED $OUTPUT_FILE${NC}"
 }
@@ -238,7 +236,6 @@ version_scan() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_version_scan_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}$PORT_VERSION_SCANNING $TARGET...${NC}"
     echo -e "${CYAN}$TIMEOUT_SCANNING_WITH ${DEFAULT_TIMEOUT}s${NC}"
     
     timeout $DEFAULT_TIMEOUT nmap -sV --host-timeout 15s -T4 "$TARGET" > "$OUTPUT_FILE" 2>&1 &
@@ -269,7 +266,6 @@ aggressive_scan() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_aggressive_scan_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}$PORT_AGGRESSIVE_SCANNING $TARGET...${NC}"
     echo -e "${YELLOW}$TIMEOUT_SCANNING_WITH ${DEFAULT_TIMEOUT}s${NC}"
     echo -e "${CYAN}Includes OS detection, version detection, script scanning, and traceroute${NC}"
     
@@ -301,25 +297,20 @@ tor_scan() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_tor_scan_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}$PORT_TOR_SCANNING $TARGET...${NC}"
     
     # Check if Tor is available
     if ! command -v tor &> /dev/null; then
-        echo "Installing Tor..."
         sudo apt install -y tor
     fi
     
     # Check if proxychains is available
     if ! command -v proxychains &> /dev/null; then
-        echo "Installing proxychains..."
         sudo apt install -y proxychains
     fi
     
-    echo -e "${YELLOW}Starting Tor service...${NC}"
     sudo systemctl start tor
     sleep 5
     
-    echo -e "${BLUE}Scanning through Tor proxy...${NC}"
     proxychains nmap -sT -T2 "$TARGET" | tee "$OUTPUT_FILE"
     echo -e "${GREEN}$ATTACK_RESULTS_SAVED $OUTPUT_FILE${NC}"
 }
@@ -331,11 +322,9 @@ mass_scan() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_mass_scan_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}$PORT_MASS_SCANNING $TARGET...${NC}"
     
     # Check if masscan is available
     if ! command -v masscan &> /dev/null; then
-        echo "Installing masscan..."
         sudo apt install -y masscan
     fi
     
@@ -343,13 +332,11 @@ mass_scan() {
     read RATE
     RATE=${RATE:-1000}
     
-    echo -e "${BLUE}Mass scanning with rate $RATE pps...${NC}"
     sudo masscan "$TARGET" -p1-65535 --rate="$RATE" | tee "$OUTPUT_FILE"
     echo -e "${GREEN}$ATTACK_RESULTS_SAVED $OUTPUT_FILE${NC}"
 }
 
 scan_all_hosts() {
-    echo -e "${BLUE}$PORT_SCANNING_ALL...${NC}"
     
     # Find latest hosts file
     LATEST_HOSTS_FILE=$(ls -t "$RESULTS_DIR"/*_live_hosts.txt 2>/dev/null | head -1)
@@ -380,10 +367,8 @@ scan_all_hosts() {
     
     case $scan_type in
         1)
-            echo -e "${BLUE}Fast scanning all hosts...${NC}"
             while read -r host; do
                 if [ ! -z "$host" ]; then
-                    echo -e "${YELLOW}Scanning $host...${NC}"
                     echo "--- Fast scan: $host ---" >> "$OUTPUT_FILE"
                     timeout 30 nmap -F --host-timeout 10s -T4 "$host" >> "$OUTPUT_FILE" 2>/dev/null
                     echo "" >> "$OUTPUT_FILE"
@@ -391,10 +376,8 @@ scan_all_hosts() {
             done < "$LATEST_HOSTS_FILE"
             ;;
         2)
-            echo -e "${BLUE}Version detection on all hosts...${NC}"
             while read -r host; do
                 if [ ! -z "$host" ]; then
-                    echo -e "${YELLOW}Version scanning $host...${NC}"
                     echo "--- Version scan: $host ---" >> "$OUTPUT_FILE"
                     timeout 60 nmap -sV --host-timeout 15s -T4 "$host" >> "$OUTPUT_FILE" 2>/dev/null || echo "$TIMEOUT_SCAN_TIMED_OUT" >> "$OUTPUT_FILE"
                     echo "" >> "$OUTPUT_FILE"
@@ -402,10 +385,8 @@ scan_all_hosts() {
             done < "$LATEST_HOSTS_FILE"
             ;;
         3)
-            echo -e "${BLUE}Aggressive scanning all hosts...${NC}"
             while read -r host; do
                 if [ ! -z "$host" ]; then
-                    echo -e "${YELLOW}Aggressive scanning $host...${NC}"
                     echo "--- Aggressive scan: $host ---" >> "$OUTPUT_FILE"
                     timeout 120 nmap -A --host-timeout 20s -T4 "$host" >> "$OUTPUT_FILE" 2>/dev/null || echo "$TIMEOUT_SCAN_TIMED_OUT" >> "$OUTPUT_FILE"
                     echo "" >> "$OUTPUT_FILE"
