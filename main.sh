@@ -1,10 +1,13 @@
 #!/bin/bash
 
 # Brabus Recon Suite (BRS) - Main Control Script
-# Network reconnaissance and penetration testing toolkit
+# Professional Network Reconnaissance & Penetration Testing Toolkit
 # Company: EasyProTech LLC (www.easypro.tech)
 # Author: brabus
-# Version: 1.0
+# Version: 2.0
+# Repository: https://github.com/EPTLLC/brs
+# Contact: mail.easypro.tech@gmail.com
+# Telegram: https://t.me/easyprotechaifactory
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -125,7 +128,7 @@ get_ethics_agreement() {
         
         # Support multiple language responses
         case "$agreement" in
-            "I AGREE"|"Я СОГЛАСЕН"|"ICH STIMME ZU"|"J'ACCEPTE"|"ACEPTO"|"我同意"|"KABUL EDİYORUM")
+            "I AGREE")
                 # Save agreement locally and globally
                 mkdir -p "$CONFIG_DIR"
                 
@@ -169,14 +172,12 @@ EOF
                 sleep 3
                 break
                 ;;
-            "EXIT"|"ВЫХОД"|"BEENDEN"|"SORTIR"|"SALIR"|"退出"|"ÇIKIŞ")
+            "EXIT")
                 echo -e "${YELLOW}$LEGAL_EXITING${NC}"
                 exit 0
                 ;;
             *)
                 echo -e "${RED}$LEGAL_INVALID_RESPONSE${NC}"
-                echo -e "${BLUE}$MENU_PRESS_ENTER${NC}"
-                read
                 ;;
         esac
     done
@@ -243,11 +244,11 @@ show_language_selection() {
     echo "╔══════════════════════════════════════════════════════════════╗"
     echo "║                 BRABUS RECON SUITE (BRS)                     ║"
     echo "║            Network Reconnaissance & Pentesting               ║"
-    echo "║               EasyProTech LLC | brabus v1.0                  ║"
+    echo "║               EasyProTech LLC | brabus v2.0                  ║"
     echo "╚══════════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
     
-    echo -e "${CYAN}🌍 LANGUAGE SELECTION / ВЫБОР ЯЗЫКА${NC}"
+    echo -e "${CYAN}$LANG_SELECTION_HEADER${NC}"
     echo "=========================================="
     echo ""
     
@@ -265,7 +266,8 @@ show_language_selection() {
     done
     
     echo ""
-    echo -n "Select language / Выберите язык: "
+        echo "$LANG_SELECTION_PROMPT ($LANG_AGREEMENT_DISPLAY / $LANG_EXIT_DISPLAY):"
+        echo -n "> "
     read choice
     
     local langs_array=($(get_available_languages))
@@ -349,7 +351,7 @@ show_banner() {
     echo "╔══════════════════════════════════════════════════════════════╗"
     echo "║                 BRABUS RECON SUITE (BRS)                     ║"
     echo "║            Network Reconnaissance & Pentesting               ║"
-    echo "║               EasyProTech LLC | brabus v1.0                  ║"
+    echo "║               EasyProTech LLC | brabus v2.0                  ║"
     echo "╚══════════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
 }
@@ -359,11 +361,12 @@ show_main_menu() {
     echo "$MENU_SEPARATOR"
     echo "1) $MENU_NETWORK_DISCOVERY"
     echo "2) $MENU_PORT_SCANNER"
-    echo "3) $MENU_VULNERABILITY_SCANNER"
-    echo "4) $MENU_SYSINFO"
-    echo "5) $MENU_ATTACK_TOOLS"
-    echo "6) 📊 Results"
-    echo "7) $MENU_SETTINGS"
+    echo "3) Domain Reconnaissance"
+    echo "4) $MENU_VULNERABILITY_SCANNER"
+    echo "5) $MENU_SYSINFO"
+    echo "6) $MENU_ATTACK_TOOLS"
+    echo "7) Results"
+    echo "8) $MENU_SETTINGS"
     echo "0) $MENU_EXIT"
     echo ""
     echo -n "$MENU_CHOOSE_OPTION: "
@@ -384,6 +387,15 @@ run_port_scanner() {
         "$SCRIPTS_DIR/port_scanner.sh"
     else
         echo -e "${RED}❌ $ERROR_TOOL_NOT_FOUND: port_scanner.sh${NC}"
+    fi
+}
+
+run_domain_recon() {
+    if [ -f "$SCRIPTS_DIR/domain_recon.sh" ]; then
+        chmod +x "$SCRIPTS_DIR/domain_recon.sh"
+        "$SCRIPTS_DIR/domain_recon.sh"
+    else
+        echo -e "${RED}❌ $ERROR_TOOL_NOT_FOUND: domain_recon.sh${NC}"
     fi
 }
 
@@ -432,7 +444,6 @@ show_results_menu() {
             *) 
                 echo -e "${RED}$MENU_INVALID_CHOICE${NC}"
                 echo -e "${BLUE}$MENU_PRESS_ENTER${NC}"
-                read
                 ;;
         esac
     done
@@ -454,23 +465,19 @@ show_settings_menu() {
             1) 
                 change_language
                 echo -e "${BLUE}$MENU_PRESS_ENTER${NC}"
-                read
                 ;;
             2) 
                 check_all_tools
                 echo -e "${BLUE}$MENU_PRESS_ENTER${NC}"
-                read
                 ;;
             3) 
                 show_help
                 echo -e "${BLUE}$MENU_PRESS_ENTER${NC}"
-                read
                 ;;
             0) return ;;
             *) 
                 echo -e "${RED}$MENU_INVALID_CHOICE${NC}"
                 echo -e "${BLUE}$MENU_PRESS_ENTER${NC}"
-                read
                 ;;
         esac
     done
@@ -483,14 +490,12 @@ view_results() {
     if [ ! -d "$RESULTS_DIR" ] || [ -z "$(ls -A "$RESULTS_DIR" 2>/dev/null)" ]; then
         echo -e "${YELLOW}📂 $NO_RESULTS${NC}"
         echo -e "\n${BLUE}$MENU_PRESS_ENTER${NC}"
-        read
         return
     fi
     
     echo -e "${CYAN}Latest results:${NC}"
     ls -lt "$RESULTS_DIR" | head -11
     echo -e "\n${BLUE}$MENU_PRESS_ENTER${NC}"
-    read
 }
 
 cleanup_results() {
@@ -501,7 +506,6 @@ cleanup_results() {
         echo -e "${GREEN}✅ Cleanup completed successfully${NC}"
     fi
     echo -e "\n${BLUE}$MENU_PRESS_ENTER${NC}"
-    read
 }
 
 show_help() {
@@ -541,18 +545,16 @@ while true; do
     case $choice in
         1) run_network_discovery ;;
         2) run_port_scanner ;;
-        3) run_vulnerability_scanner ;;
-        4) run_system_info ;;
-        5) run_attack_tools ;;
-        6) show_results_menu ;;
-        7) show_settings_menu ;;
+        3) run_domain_recon ;;
+        4) run_vulnerability_scanner ;;
+        5) run_system_info ;;
+        6) run_attack_tools ;;
+        7) show_results_menu ;;
+        8) show_settings_menu ;;
         0) 
             echo -e "${GREEN}👋 $COMMON_DONE!${NC}"
             exit 0 
             ;;
         *) echo -e "${RED}$MENU_INVALID_CHOICE${NC}" ;;
     esac
-    
-    echo -e "\n${BLUE}$MENU_PRESS_ENTER${NC}"
-    read
 done

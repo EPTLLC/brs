@@ -3,8 +3,11 @@
 # Brabus Recon Suite (BRS) - Network Discovery Module
 # Network reconnaissance and host enumeration script
 # Company: EasyProTech LLC (www.easypro.tech)
+# Repository: https://github.com/EPTLLC/brs
+# Contact: mail.easypro.tech@gmail.com
+# Telegram: https://t.me/easyprotechaifactory
 # Author: brabus
-# Version: 1.0
+# Version: 2.0
 
 # ⚠️ LEGAL WARNING ⚠️
 # UNAUTHORIZED SCANNING IS ILLEGAL
@@ -39,7 +42,7 @@ LANGUAGE_CONFIG="$CONFIG_DIR/language.conf"
 if [ -f "$LANGUAGE_CONFIG" ]; then
     source "$LANGUAGE_CONFIG"
 else
-    CURRENT_LANGUAGE="ru"
+    CURRENT_LANGUAGE="en"
 fi
 
 # Load language file
@@ -65,28 +68,7 @@ cleanup() {
 }
 trap cleanup SIGINT SIGTERM
 
-# Progress bar function
-show_progress() {
-    local current=$1
-    local total=$2
-    local start_time=$3
-    local operation=$4
-    
-    local percent=$((current * 100 / total))
-    local filled=$((percent / 5))
-    local empty=$((20 - filled))
-    
-    # Calculate elapsed time
-    local elapsed=$(($(date +%s) - start_time))
-    local mins=$((elapsed / 60))
-    local secs=$((elapsed % 60))
-    
-    printf "\r\033[K"  # Clear line
-    printf "${CYAN}[$(printf '%*s' $filled | tr ' ' '█')$(printf '%*s' $empty | tr ' ' '░')] %3d%% (%d/%d) %s ${YELLOW}[%02d:%02d]${NC}" \
-           $percent $current $total "$operation" $mins $secs
-}
-
-# Show spinner for long operations
+# Show spinner for background operations with live timer and cancellation message
 show_spinner() {
     local pid=$1
     local message=$2
@@ -94,15 +76,22 @@ show_spinner() {
     local spin_chars="⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
     local i=0
     
+    echo -e "${CYAN}$message (Ctrl+C to cancel)${NC}"
+    
     while kill -0 $pid 2>/dev/null; do
         local elapsed=$(($(date +%s) - start_time))
         local mins=$((elapsed / 60))
         local secs=$((elapsed % 60))
-        printf "\r\033[K${CYAN}${spin_chars:$i:1} %s ${YELLOW}[%02d:%02d] ${RED}(Ctrl+C to cancel)${NC}" "$message" $mins $secs
-        i=$(( (i+1) % ${#spin_chars} ))
+        
+        printf "\r${CYAN}${spin_chars:$i:1} $message [%02d:%02d]${NC}" $mins $secs
+        i=$(( (i + 1) % ${#spin_chars} ))
         sleep 0.1
     done
-    printf "\r\033[K"  # Clear line
+    
+    local elapsed=$(($(date +%s) - start_time))
+    local mins=$((elapsed / 60))
+    local secs=$((elapsed % 60))
+    printf "\r${GREEN}✅ $message completed [%02d:%02d]${NC}\n" $mins $secs
 }
 
 echo -e "${BLUE}$NET_TITLE${NC}"
@@ -434,7 +423,7 @@ if command -v nmap >/dev/null 2>&1 && [ "$HOSTS_COUNT" -gt 0 ]; then
     while read -r host; do
         if [ ! -z "$host" ]; then
             current_host=$((current_host + 1))
-            show_progress $current_host $total_hosts $start_time "Scanning $host"
+                         # Scanning in background - no additional UI needed
             
             # Launch background scan
             scan_host "$host" &
@@ -453,9 +442,7 @@ if command -v nmap >/dev/null 2>&1 && [ "$HOSTS_COUNT" -gt 0 ]; then
     # Wait for remaining jobs
     wait
     
-    # Final progress
-    show_progress $total_hosts $total_hosts $start_time "Completed"
-    echo ""
+         echo ""
 fi
 
 echo -e "\n${GREEN}$NET_SCAN_COMPLETE${NC}"

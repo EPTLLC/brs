@@ -1,5 +1,69 @@
-# Brabus Recon Suite (BRS) - Git Ignore
+# Brabus Recon Suite (BRS) - Git Ignore File
 # Company: EasyProTech LLC (www.easypro.tech)
+# Repository: https://github.com/EPTLLC/brs
 
-# Exclude info directory
----info/ 
+# Results and output files
+results/*.txt
+results/*.log
+results/*.xml
+results/*.json
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+debug.log
+error.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Python cache (if any Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Config backups
+configs/*.bak
+configs/*.backup
+
+# Keep results directory but not contents
+!results/.gitkeep
+
+# Keep wordlists directory structure
+!wordlists/
+!wordlists/*.txt
+
+# Sensitive information
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa*
+id_dsa*
+
+# Local configuration overrides
+local.conf
+*.local

