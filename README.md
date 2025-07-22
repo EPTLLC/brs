@@ -1,10 +1,3 @@
-# PROJECT: BRABUS RECON SUITE (BRS)  
-# COMPANY: EASYPROTECH LLC (www.easypro.tech)  
-# DEVELOPER: BRABUS  
-# CREATED: 22.07.2025 03:06:28  
-# VERSION: 2.0  
-# TELEGRAM: https://t.me/easyprotechaifactory
-
 ```
 ██████  ██████  ███████ 
 ██   ██ ██   ██ ██      
@@ -12,6 +5,13 @@
 ██   ██ ██   ██      ██ 
 ██████  ██   ██ ███████ 
 ```
+
+# project: brabus recon suite (brs)  
+# company: easyprotech llc (www.easypro.tech)  
+# developer: brabus  
+# created: 22.07.2025 03:06:28  
+# version: 2.0  
+# telegram: https://t.me/easyprotechaifactory
 
 # Brabus Recon Suite (BRS) v2.0
 

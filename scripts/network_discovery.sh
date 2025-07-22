@@ -2,12 +2,12 @@
 
 # Brabus Recon Suite (BRS) - Network Discovery Module
 # Network reconnaissance and host enumeration script
-# COMPANY: EasyProTech LLC (www.easypro.tech)
-# REPOSITORY: https://github.com/EPTLLC/brs
-# CONTACT: mail.easypro.tech@gmail.com
-# TELEGRAM: https://t.me/easyprotechaifactory
-# AUTHOR: brabus
-# VERSION: 2.0
+# company: EasyProTech LLC (www.easypro.tech)
+# repository: https://github.com/EPTLLC/brs
+# contact: mail.easypro.tech@gmail.com
+# telegram: https://t.me/easyprotechaifactory
+# author: brabus
+# version: 2.0
 
 # ⚠️ LEGAL WARNING ⚠️
 # UNAUTHORIZED SCANNING IS ILLEGAL

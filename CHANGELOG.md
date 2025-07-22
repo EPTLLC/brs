@@ -1,10 +1,10 @@
-# PROJECT: BRABUS RECON SUITE (BRS)  
-# COMPANY: EASYPROTECH LLC (www.easypro.tech)  
-# DEVELOPER: BRABUS  
-# CREATED: 22.07.2025 03:10:45  
-# REPOSITORY: https://github.com/EPTLLC/brs
-# CONTACT: mail.easypro.tech@gmail.com
-# TELEGRAM: https://t.me/easyprotechaifactory
+# project: brabus recon suite (brs)  
+# company: easyprotech llc (www.easypro.tech)  
+# developer: brabus  
+# created: 22.07.2025 03:10:45  
+# repository: https://github.com/EPTLLC/brs
+# contact: mail.easypro.tech@gmail.com
+# telegram: https://t.me/easyprotechaifactory
 
 # Changelog
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Brabus Recon Suite (BRS) - Tool Management Module
-# COMPANY: EasyProTech LLC (www.easypro.tech)
-# VERSION: 1.0
+# company: EasyProTech LLC (www.easypro.tech)
+# version: 1.0
 
 # Color definitions (if not already defined)
 if [ -z "$RED" ]; then

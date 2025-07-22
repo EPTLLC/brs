@@ -1,6 +1,6 @@
 #!/bin/bash
 # English language file for Brabus Recon Suite (BRS)
-# COMPANY: EasyProTech LLC (www.easypro.tech)
+# company: EasyProTech LLC (www.easypro.tech)
 # Language: English (en)
 
 # Global
