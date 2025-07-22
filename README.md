@@ -6,12 +6,7 @@
 ██████  ██   ██ ███████ 
 ```
 
-# project: brabus recon suite (brs)  
-# company: easyprotech llc (www.easypro.tech)  
-# developer: brabus  
-# created: 22.07.2025 03:06:28  
-# version: 2.0  
-# telegram: https://t.me/easyprotechaifactory
+<sub>project: brabus recon suite (brs) | company: easyprotech llc (www.easypro.tech) | developer: brabus | created: 22.07.2025 03:06:28 | version: 2.0 | telegram: https://t.me/easyprotechaifactory</sub>
 
 # Brabus Recon Suite (BRS) v2.0
 
