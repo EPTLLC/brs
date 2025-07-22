@@ -2,12 +2,12 @@
 
 # Brabus Recon Suite (BRS) - Main Control Script
 # Professional Network Reconnaissance & Penetration Testing Toolkit
-# Company: EasyProTech LLC (www.easypro.tech)
-# Author: brabus
-# Version: 2.0
-# Repository: https://github.com/EPTLLC/brs
-# Contact: mail.easypro.tech@gmail.com
-# Telegram: https://t.me/easyprotechaifactory
+# COMPANY: EasyProTech LLC (www.easypro.tech)
+# AUTHOR: brabus
+# VERSION: 2.0
+# REPOSITORY: https://github.com/EPTLLC/brs
+# CONTACT: mail.easypro.tech@gmail.com
+# TELEGRAM: https://t.me/easyprotechaifactory
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'

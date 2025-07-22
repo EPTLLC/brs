@@ -2,12 +2,12 @@
 
 # Brabus Recon Suite (BRS) - Port Scanner Module
 # Comprehensive port scanning and service enumeration
-# Company: EasyProTech LLC (www.easypro.tech)
-# Repository: https://github.com/EPTLLC/brs
-# Contact: mail.easypro.tech@gmail.com
-# Telegram: https://t.me/easyprotechaifactory
-# Author: brabus
-# Version: 2.0
+# COMPANY: EasyProTech LLC (www.easypro.tech)
+# REPOSITORY: https://github.com/EPTLLC/brs
+# CONTACT: mail.easypro.tech@gmail.com
+# TELEGRAM: https://t.me/easyprotechaifactory
+# AUTHOR: brabus
+# VERSION: 2.0
 
 # ⚠️ LEGAL WARNING ⚠️
 # UNAUTHORIZED SCANNING IS ILLEGAL

@@ -2,12 +2,12 @@
 
 # Brabus Recon Suite (BRS) - System Information Module
 # System reconnaissance and configuration analysis script
-# Company: EasyProTech LLC (www.easypro.tech)
-# Repository: https://github.com/EPTLLC/brs
-# Contact: mail.easypro.tech@gmail.com
-# Telegram: https://t.me/easyprotechaifactory
-# Author: brabus
-# Version: 2.0
+# COMPANY: EasyProTech LLC (www.easypro.tech)
+# REPOSITORY: https://github.com/EPTLLC/brs
+# CONTACT: mail.easypro.tech@gmail.com
+# TELEGRAM: https://t.me/easyprotechaifactory
+# AUTHOR: brabus
+# VERSION: 2.0
 
 # Load language file
 SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

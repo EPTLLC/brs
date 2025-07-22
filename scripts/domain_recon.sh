@@ -2,13 +2,13 @@
 
 # Brabus Recon Suite (BRS) - Domain Reconnaissance Module
 # Comprehensive domain intelligence gathering and DNS enumeration
-# Company: EasyProTech LLC (www.easypro.tech)
-# Repository: https://github.com/EPTLLC/brs
-# Contact: mail.easypro.tech@gmail.com
-# Telegram: https://t.me/easyprotechaifactory  
+# COMPANY: EasyProTech LLC (www.easypro.tech)
+# REPOSITORY: https://github.com/EPTLLC/brs
+# CONTACT: mail.easypro.tech@gmail.com
+# TELEGRAM: https://t.me/easyprotechaifactory  
 # Dev: Brabus
 # Created: 22.07.2025 01:55:38
-# Telegram: https://t.me/easyprotechaifactory
+# TELEGRAM: https://t.me/easyprotechaifactory
 
 # ⚠️ CRITICAL LEGAL WARNING ⚠️
 # UNAUTHORIZED DOMAIN RECONNAISSANCE IS ILLEGAL
