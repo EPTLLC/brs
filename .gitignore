@@ -1,26 +1,32 @@
-# Brabus Recon Suite (BRS) - Git Ignore File
+# Project: Brabus Recon Suite (BRS)
 # Company: EasyProTech LLC (www.easypro.tech)
-# Repository: https://github.com/EPTLLC/brs
+# Dev: Brabus
+# Created: Wed 24 Jul 00:17:00 MSK 2025
+# Telegram: https://t.me/easyprotechaifactory
 
-# Results and output files
+# Release files (не включаем в Git)
+brs-v*.tar.gz
+brs-v*.zip
+brs-v*.tar.gz.asc
+brs-v*.zip.asc
+brs-v*.tar.gz.sig
+brs-v*.zip.sig
+brs-v*.sha256
+brs-v*.sha512
+
+# GPG Keys и метаданные релиза 
+brs-signing-key*.asc
+brs-trust*.txt
+RELEASE_METADATA.txt
+SIGNING_COMMANDS.txt
+
+# Results и временные файлы
 results/*.txt
 results/*.log
-results/*.xml
-results/*.json
-
-# Temporary files
 *.tmp
 *.temp
-*.swp
-*.swo
-*~
 
-# Log files
-*.log
-debug.log
-error.log
-
-# OS generated files
+# System и cache файлы
 .DS_Store
 .DS_Store?
 ._*
@@ -28,42 +34,55 @@ error.log
 .Trashes
 ehthumbs.db
 Thumbs.db
+*~
+*.swp
+*.swo
 
-# IDE files
+# IDE файлы  
 .vscode/
 .idea/
-*.sublime-project
-*.sublime-workspace
-
-# Python cache (if any Python scripts)
-__pycache__/
-*.py[cod]
-*$py.class
+*.sublime-*
 
 # Backup files
 *.bak
 *.backup
 *.old
 
-# Config backups
-configs/*.bak
-configs/*.backup
+# Log files
+*.log
+*.out
 
-# Keep results directory but not contents
-!results/.gitkeep
+# OS generated files
+*.pid
+*.lock
 
-# Keep wordlists directory structure
-!wordlists/
-!wordlists/*.txt
-
-# Sensitive information
-*.key
-*.pem
-*.p12
-*.pfx
-id_rsa*
-id_dsa*
-
-# Local configuration overrides
-local.conf
+# User specific files
+.brs_agreed*
 *.local
+config.local
+settings.local
+
+# GPG файлы
+*.gpg
+secring.*
+pubring.*
+trustdb.gpg
+random_seed
+
+# Python cache (если есть)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node modules (если есть)
+node_modules/
+
+# Archives (общие)
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip 
