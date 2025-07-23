@@ -203,9 +203,9 @@ The disclaimer of warranties, limitation of liability, indemnification clause, a
 
 ---
 
-*Last Updated: June 30, 2025*
-*Version: 1.0*
+*Last Updated: July 23, 2025*
+*Version: 2.0*
 
 **This document constitutes a legally binding agreement. If you have questions about your rights or obligations, consult with qualified legal counsel familiar with cybersecurity and computer crime law.**
 
-**EasyProTech LLC | www.easypro.tech | @easyprotechaifactory | Brabus Recon Suite v1.0** 
+**EasyProTech LLC | www.easypro.tech | @easyprotechaifactory | Brabus Recon Suite v2.0** 

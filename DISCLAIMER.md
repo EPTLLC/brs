@@ -73,4 +73,4 @@ If you are unsure whether your intended use is legal or authorized, **DO NOT USE
 *For full legal terms, see LEGAL.md*
 *For ethical guidelines, see ETHICS.md*
 
-**EasyProTech LLC | Brabus Recon Suite v1.0 | @easyprotechaifactory** 
+**EasyProTech LLC | Brabus Recon Suite v2.0 | @easyprotechaifactory** 

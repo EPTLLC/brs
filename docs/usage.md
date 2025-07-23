@@ -315,4 +315,4 @@ Before using BRS, ensure you have:
 
 *This document should be reviewed regularly and updated as laws and best practices evolve. Always consult with legal professionals when planning security testing activities.*
 
-**EasyProTech LLC | Brabus Recon Suite v1.0** 
+**EasyProTech LLC | Brabus Recon Suite v2.0** 
