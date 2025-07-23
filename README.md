@@ -419,6 +419,40 @@ EasyProTech LLC provides this software "AS IS" with NO WARRANTY and accepts NO R
 
 **YOU BEAR FULL RESPONSIBILITY FOR YOUR ACTIONS.**
 
+## 🔐 Release Verification
+
+**⚠️ IMPORTANT: Always verify downloaded releases to ensure authenticity!**
+
+### GPG Signature Verification
+
+All official BRS releases are cryptographically signed with GPG:
+
+**Download and verify:**
+```bash
+# Download the public key
+curl -O https://easypro.tech/keys/brs/brs-signing-key-v2.0.asc
+curl -O https://easypro.tech/keys/brs/RELEASE_METADATA.txt
+
+# Import the key
+gpg --import brs-signing-key-v2.0.asc
+
+# Verify signatures
+gpg --verify brs-v2.0.tar.gz.asc brs-v2.0.tar.gz
+gpg --verify brs-v2.0.zip.asc brs-v2.0.zip
+
+# Verify checksums
+sha256sum -c brs-v2.0.sha256
+sha512sum -c brs-v2.0.sha512
+```
+
+**GPG Key Information:**
+- **Key ID:** `9E8DB39DCFFF51D8`
+- **Fingerprint:** `7A69B983BB4F308184FD21229E8DB39DCFFF51D8`
+- **Owner:** EPT LLC <mail@easypro.tech>
+- **SHA256:** `7e97952082610f28a4ce89d11f8f97a414ce80bf3146b5364f494805f6e23c73`
+
+**Security:** Only use releases with valid GPG signatures! See [KEY_VERIFICATION.md](KEY_VERIFICATION.md) for detailed instructions.
+
 ## 📞 Support Policy
 
 **No Support Provided**: This project is released as-is without support, consultation, or assistance.

@@ -8,15 +8,15 @@
 
 ```bash
 # Download BRS-specific signing key and metadata
-curl -O https://www.easypro.tech/keys/brs/brs-signing-key.asc
+curl -O https://www.easypro.tech/keys/brs/brs-signing-key-v2.0.asc
 curl -O https://www.easypro.tech/keys/brs/RELEASE_METADATA.txt
-curl -O https://www.easypro.tech/keys/brs/brs-trust.txt
+curl -O https://www.easypro.tech/keys/brs/brs-trust-v2.0.txt
 
 # Verify key fingerprint from metadata
 cat RELEASE_METADATA.txt | grep "Key Fingerprint"
 
 # Import the key
-gpg --import brs-signing-key.asc
+gpg --import brs-signing-key-v2.0.asc
 ```
 
 ---
@@ -42,13 +42,13 @@ cat brs-trust.txt
 ### 🔎 2. Verify the Key Fingerprint
 
 ```bash
-gpg --fingerprint noreply@easypro.tech
+gpg --fingerprint mail@easypro.tech
 ```
 
 Expected output:
 
 ```
-Key fingerprint = 24B2 A5CC 6605 58C2 7D3D 7B63 FECE 5344 ED14 60A7
+Key fingerprint = 7A69 B983 BB4F 3081 84FD 2122 9E8D B39D CFFF 51D8
 ```
 
 ✅ If the fingerprint **matches exactly**, you can trust the key.
@@ -60,20 +60,20 @@ Key fingerprint = 24B2 A5CC 6605 58C2 7D3D 7B63 FECE 5344 ED14 60A7
 #### For `.tar.gz`:
 
 ```bash
-gpg --verify brs-v1.0.tar.gz.asc brs-v1.0.tar.gz
+gpg --verify brs-v2.0.tar.gz.asc brs-v2.0.tar.gz
 ```
 
 #### For `.zip`:
 
 ```bash
-gpg --verify brs-v1.0.zip.asc brs-v1.0.zip
+gpg --verify brs-v2.0.zip.asc brs-v2.0.zip
 ```
 
 #### Check SHA integrity:
 
 ```bash
-sha256sum -c brs-v1.0.sha256
-sha512sum -c brs-v1.0.sha512
+sha256sum -c brs-v2.0.sha256
+sha512sum -c brs-v2.0.sha512
 ```
 
 ---
@@ -82,11 +82,11 @@ sha512sum -c brs-v1.0.sha512
 
 | Field                | Value                                                              |
 | -------------------- | ------------------------------------------------------------------ |
-| **Key ID**           | `FECE5344ED1460A7`                                                 |
-| **Fingerprint**      | `24B2A5CC660558C27D3D7B63FECE5344ED1460A7`                         |
-| **Key SHA256**       | `8e8cba1ab634e752eaae0708c13de47ef27b266aa39bd6cdf5e6158ac489203d` |
+| **Key ID**           | `9E8DB39DCFFF51D8`                                                 |
+| **Fingerprint**      | `7A69B983BB4F308184FD21229E8DB39DCFFF51D8`                         |
+| **Key SHA256**       | `7e97952082610f28a4ce89d11f8f97a414ce80bf3146b5364f494805f6e23c73` |
 | **Key Type**         | RSA 4096-bit                                                       |
-| **Email (GPG only)** | `noreply@easypro.tech`                                             |
+| **Email (GPG only)** | `mail@easypro.tech`                                               |
 | **Website**          | [https://www.easypro.tech/keys/brs/](https://www.easypro.tech/keys/brs/)   |
 
 ---
@@ -116,5 +116,5 @@ For licensing or verification questions:
 
 * `gpg --verify` = OK
 * `sha256sum -c` = OK  
-* Fingerprint matches: `24B2A5CC660558C27D3D7B63FECE5344ED1460A7`
-* Key SHA256 matches: `8e8cba1ab634e752eaae0708c13de47ef27b266aa39bd6cdf5e6158ac489203d`
+* Fingerprint matches: `7A69B983BB4F308184FD21229E8DB39DCFFF51D8`
+* Key SHA256 matches: `7e97952082610f28a4ce89d11f8f97a414ce80bf3146b5364f494805f6e23c73`

@@ -37,6 +37,6 @@ sha512sum -c brs-v1.0.sha512
 ```
 
 ## GPG Key Information
-- Key ID: FECE5344ED1460A7
-- Fingerprint: 24B2A5CC660558C27D3D7B63FECE5344ED1460A7
-- Download: ../brs-signing-key.asc 
+- Key ID: 9E8DB39DCFFF51D8
+- Fingerprint: 7A69B983BB4F308184FD21229E8DB39DCFFF51D8
+- Download: ../brs-signing-key-v2.0.asc (или ../brs-signing-key.asc через симлинк) 

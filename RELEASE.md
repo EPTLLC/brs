@@ -14,9 +14,9 @@
 This release is **cryptographically signed** with GPG to ensure authenticity and integrity.
 
 **GPG Key Information**:
-- **Key ID**: `FECE5344ED1460A7`
-- **Fingerprint**: `24B2A5CC660558C27D3D7B63FECE5344ED1460A7`  
-- **Owner**: EasyProTech LLC <noreply@easypro.tech>
+- **Key ID**: `9E8DB39DCFFF51D8`
+- **Fingerprint**: `7A69B983BB4F308184FD21229E8DB39DCFFF51D8`  
+- **Owner**: EPT LLC <mail@easypro.tech>
 - **Key Type**: RSA 4096-bit
 - **Created**: July 23, 2025
 - **BRS Keys**: https://www.easypro.tech/keys/brs/
@@ -29,9 +29,9 @@ This release is **cryptographically signed** with GPG to ensure authenticity and
 gpg --keyserver keyserver.ubuntu.com --recv-keys [KEY_ID]
 
 # Method 2: From our website
-wget https://www.easypro.tech/keys/brs/brs-signing-key.asc
+wget https://www.easypro.tech/keys/brs/brs-signing-key-v2.0.asc
 wget https://www.easypro.tech/keys/brs/RELEASE_METADATA.txt
-gpg --import brs-signing-key.asc
+gpg --import brs-signing-key-v2.0.asc
 ```
 
 2. **Verify the signature**:
