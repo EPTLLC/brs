@@ -469,7 +469,7 @@ sha512sum -c brs-v2.0.sha512
 
 ### Commercial License
 - Commercial entities and proprietary projects
-- Contact: @easyprotechaifactory (Telegram)
+- Contact: @easyprotech (Telegram)
 
 **See LICENSE file for complete terms.**
 
