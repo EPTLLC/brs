@@ -179,4 +179,4 @@ By using BRS, you commit to:
 
 **EasyProTech LLC and the BRS development team are not responsible for misuse of this toolkit. Users bear full responsibility for their actions.**
 
-**Contact: @easyprotechaifactory | Website: www.easypro.tech** 
+**Contact: @easyprotech | Website: www.easypro.tech** 

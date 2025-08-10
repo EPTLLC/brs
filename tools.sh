@@ -58,7 +58,7 @@ REQUIRED_TOOLS=(
     "dirb:dirb - Web content scanner"
     "curl:curl - Command line HTTP client"
     "wget:wget - Network downloader"
-    "dnsutils:dnsutils (dig) - DNS utilities"
+    "dig:dig - DNS utilities"
     "whois:whois - Domain WHOIS lookup"
     "jq:jq - JSON processor"
     "tor:tor - The Onion Router"

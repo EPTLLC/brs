@@ -68,7 +68,7 @@ If you are unsure whether your intended use is legal or authorized, **DO NOT USE
 - Legal counsel familiar with cybersecurity law
 - Your organization's compliance team
 - The system owners for explicit written permission
-- EasyProTech LLC via @easyprotechaifactory (for licensing questions only)
+- EasyProTech LLC via @easyprotech (for licensing questions only)
 
 ---
 
@@ -79,4 +79,4 @@ If you are unsure whether your intended use is legal or authorized, **DO NOT USE
 *For full legal terms, see LEGAL.md*
 *For ethical guidelines, see ETHICS.md*
 
-**EasyProTech LLC | Brabus Recon Suite v1.0 | @easyprotechaifactory** 
+**EasyProTech LLC | Brabus Recon Suite v1.0 | @easyprotech** 

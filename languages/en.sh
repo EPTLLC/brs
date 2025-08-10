@@ -138,7 +138,7 @@ LANG_RESTART_REQUIRED="Please restart the application to apply changes."
 COMPANY_NAME="EasyProTech LLC"
 COMPANY_NAME_EN="EasyProTech LLC"
 COMPANY_WEBSITE="www.easypro.tech"
-COMPANY_CONTACT_TELEGRAM="@easyprotechaifactory"
+COMPANY_CONTACT_TELEGRAM="@easyprotech"
 COMPANY_JURISDICTION="United States / United Kingdom"
 COMPANY_JURISDICTION_SECONDARY="Users must also comply with laws of their jurisdictions"
 

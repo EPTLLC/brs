@@ -11,7 +11,7 @@
 # company: EasyProTech LLC (www.easypro.tech)
 # repository: https://github.com/EPTLLC/brs
 # contact: mail.easypro.tech@gmail.com
-# telegram: https://t.me/easyprotechaifactory
+# telegram: https://t.me/easyprotech
 # author: brabus
 # version: 2.0
 

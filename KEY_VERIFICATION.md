@@ -112,7 +112,7 @@ sha512sum -c brs-v1.0.sha512
 
 For licensing or verification questions:
 
-* Telegram: [@easyprotechaifactory](https://t.me/easyprotechaifactory)
+* Telegram: [@easyprotech](https://t.me/easyprotech)
 * Website: [www.easypro.tech](https://www.easypro.tech)
 * BRS Keys: [www.easypro.tech/keys/brs/](https://www.easypro.tech/keys/brs/)
 

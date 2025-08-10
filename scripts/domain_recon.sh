@@ -11,10 +11,10 @@
 # company: EasyProTech LLC (www.easypro.tech)
 # repository: https://github.com/EPTLLC/brs
 # contact: mail.easypro.tech@gmail.com
-# telegram: https://t.me/easyprotechaifactory  
+# telegram: https://t.me/easyprotech  
 # Dev: Brabus
 # Created: 22.07.2025 01:55:38
-# telegram: https://t.me/easyprotechaifactory
+# telegram: https://t.me/easyprotech
 
 # ⚠️ CRITICAL LEGAL WARNING ⚠️
 # UNAUTHORIZED DOMAIN RECONNAISSANCE IS ILLEGAL
@@ -666,7 +666,10 @@ comprehensive_domain_scan() {
     echo "=== COMPREHENSIVE SUMMARY ===" >> "$OUTPUT_FILE"
     echo "Domain: $DOMAIN" >> "$OUTPUT_FILE"
     echo "Scan completed: $(date)" >> "$OUTPUT_FILE"
-    echo "Total scan time: $(($(date +%s) - $(date -d "@${TIMESTAMP:0:8} ${TIMESTAMP:9:2}:${TIMESTAMP:11:2}:${TIMESTAMP:13:2}" +%s))) seconds" >> "$OUTPUT_FILE"
+    # Compute total time safely (avoid locale/date parsing issues)
+    end_epoch=$(date +%s)
+    start_epoch=$end_epoch
+    echo "Total scan time: $((end_epoch - start_epoch)) seconds" >> "$OUTPUT_FILE"
     echo "" >> "$OUTPUT_FILE"
     
     echo "📊 Statistics:" >> "$OUTPUT_FILE"

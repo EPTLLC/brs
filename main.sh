@@ -13,7 +13,7 @@
 # version: 2.0
 # repository: https://github.com/EPTLLC/brs
 # contact: mail.easypro.tech@gmail.com
-# telegram: https://t.me/easyprotechaifactory
+# telegram: https://t.me/easyprotech
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -24,7 +24,7 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 
 # BRS version
-BRS_VERSION="2.0"
+BRS_VERSION="2.1"
 
 # Get script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -365,6 +365,52 @@ show_banner() {
     echo -e "${NC}"
 }
 
+show_start_choice() {
+    echo -e "${CYAN}QUICK START${NC}"
+    echo "===================="
+    echo "1) Full Scan (auto)"
+    echo "2) Classic Menu"
+    echo "0) $MENU_EXIT"
+    echo ""
+    echo -n "$MENU_CHOOSE_OPTION: "
+}
+
+run_full_scan_wizard() {
+    echo -e "${PURPLE}FULL SCAN WIZARD${NC}"
+    echo "====================="
+    echo "- Press Enter to scan this machine"
+    echo "- Or enter IP/Domain to scan a remote target"
+    echo -n "> "
+    read FS_TARGET
+
+    # Resolve local target
+    if [ -z "$FS_TARGET" ]; then
+        LOCAL_IP=$(hostname -I 2>/dev/null | awk '{print $1}')
+        [ -z "$LOCAL_IP" ] && LOCAL_IP="127.0.0.1"
+        FS_TARGET="$LOCAL_IP"
+        echo -e "${CYAN}Target: local ($FS_TARGET)${NC}"
+        # 1) System Information - Full
+        printf "1\n\n0\n" | "$SCRIPTS_DIR/system_info.sh"
+        # 2) Port Scanning - Aggressive (-A)
+        printf "6\n$FS_TARGET\n0\n" | "$SCRIPTS_DIR/port_scanner.sh"
+        # 3) Vulnerability Scanner - Comprehensive (force continue when unreachable)
+        printf "10\n$FS_TARGET\ny\n0\n" | "$SCRIPTS_DIR/vulnerability_scanner.sh"
+        echo -e "${GREEN}Full scan complete. Reports saved in: $RESULTS_DIR${NC}"
+        return
+    fi
+
+    # If looks like a domain, run domain reconnaissance as well
+    if echo "$FS_TARGET" | grep -Eq '^[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?)+$'; then
+        printf "10\n$FS_TARGET\n0\n" | "$SCRIPTS_DIR/domain_recon.sh"
+    fi
+
+    # Port Scanning (Aggressive) on provided target
+    printf "6\n$FS_TARGET\n0\n" | "$SCRIPTS_DIR/port_scanner.sh"
+    # Vulnerability Scanner (Comprehensive)
+    printf "10\n$FS_TARGET\ny\n0\n" | "$SCRIPTS_DIR/vulnerability_scanner.sh"
+    echo -e "${GREEN}Full scan complete. Reports saved in: $RESULTS_DIR${NC}"
+}
+
 show_main_menu() {
     echo -e "${CYAN}$MENU_TITLE${NC}"
     echo "$MENU_SEPARATOR"
@@ -544,13 +590,22 @@ quick_tool_check
 # Check ethics agreement before starting
 require_ethics_agreement
 
-# Main program loop
+# Start: Quick choice then classic menu
 show_banner
+show_start_choice
+read start_choice
+case $start_choice in
+    1)
+        run_full_scan_wizard
+        ;;
+    0)
+        echo -e "${GREEN}👋 $COMMON_DONE!${NC}"; exit 0 ;;
+    *) : ;; # fallthrough to classic menu
+esac
 
 while true; do
     show_main_menu
     read choice
-    
     case $choice in
         1) run_network_discovery ;;
         2) run_port_scanner ;;
@@ -560,10 +615,7 @@ while true; do
         6) run_attack_tools ;;
         7) show_results_menu ;;
         8) show_settings_menu ;;
-        0) 
-            echo -e "${GREEN}👋 $COMMON_DONE!${NC}"
-            exit 0 
-            ;;
+        0) echo -e "${GREEN}👋 $COMMON_DONE!${NC}"; exit 0 ;;
         *) echo -e "${RED}$MENU_INVALID_CHOICE${NC}" ;;
     esac
 done
