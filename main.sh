@@ -10,7 +10,7 @@
 # Professional Network Reconnaissance & Penetration Testing Toolkit
 # company: EasyProTech LLC (www.easypro.tech)
 # author: brabus
-# version: 2.0
+# version: 2.1
 # repository: https://github.com/EPTLLC/brs
 # contact: mail.easypro.tech@gmail.com
 # telegram: https://t.me/easyprotech
@@ -253,7 +253,7 @@ show_language_selection() {
     echo "╔══════════════════════════════════════════════════════════════╗"
     echo "║                 BRABUS RECON SUITE (BRS)                     ║"
     echo "║            Network Reconnaissance & Pentesting               ║"
-    echo "║               EasyProTech LLC | brabus v2.0                  ║"
+    echo "║               EasyProTech LLC | brabus v2.1                  ║"
     echo "╚══════════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
     
@@ -360,7 +360,7 @@ show_banner() {
     echo "╔══════════════════════════════════════════════════════════════╗"
     echo "║                 BRABUS RECON SUITE (BRS)                     ║"
     echo "║            Network Reconnaissance & Pentesting               ║"
-    echo "║               EasyProTech LLC | brabus v2.0                  ║"
+    echo "║               EasyProTech LLC | brabus v2.1                  ║"
     echo "╚══════════════════════════════════════════════════════════════╝"
     echo -e "${NC}"
 }
