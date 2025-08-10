@@ -37,6 +37,8 @@ Advanced suite of tools for network reconnaissance, domain analysis, vulnerabili
 
 ## 🚀 What's New in v2.1
 
+## 🚀 What's New in v2.1
+
 - Quick Start: Full Scan (auto) at launch
   - Enter → full local scan (System Info → Port Scan Aggressive → Vulnerability Comprehensive)
   - IP/Domain → full remote scan (+ Domain Recon for domains)
