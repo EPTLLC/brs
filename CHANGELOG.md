@@ -4,11 +4,36 @@
 # created: 22.07.2025 03:10:45  
 # repository: https://github.com/EPTLLC/brs
 # contact: mail.easypro.tech@gmail.com
-# telegram: https://t.me/easyprotechaifactory
+# telegram: https://t.me/easyprotech
 
 # Changelog
 
 All notable changes to Brabus Recon Suite (BRS) are documented in this file.
+
+## [2.1.0] - 2025-08-11
+
+### 🚀 New
+- Quick Start: "Full Scan (auto)" at launch
+  - Enter = full local host scan (System Info Full → Port Scanner Aggressive → Vulnerability Comprehensive)
+  - IP/Domain = full remote target scan (Aggressive + Comprehensive, Domain Recon for domains)
+
+### 🔧 Improvements
+- i18n loading fixed across modules; unified `CURRENT_LANGUAGE="en"`
+- Main menu uses localized labels for Domain Recon/Results
+- Centralized tool management; removed inline `apt install` from modules
+- Added required tools in checker: dig, whois, jq, tor, proxychains, hping3
+- Network Discovery: fixed variable scoping, non-interactive `LOCAL_NET` support
+- Domain Recon: fixed total time calculation in comprehensive scan
+- Added `scripts/self_test.sh` smoke runner (non-invasive checks)
+
+### 📝 Docs
+- README updated for v2.1 and quick start flow
+- KEY_VERIFICATION updated to current GPG key metadata
+- Synced legal/release files with upstream
+
+### 🐛 Fixes
+- Help text corrected to point to Settings → Check Tools
+- Ethics agreement log now records BRS v2.1
 
 ## [2.0.0] - 2025-07-22
 
@@ -110,7 +135,7 @@ All notable changes to Brabus Recon Suite (BRS) are documented in this file.
 **Repository**: https://github.com/EPTLLC/brs  
 **Company**: EasyProTech LLC, London, UK  
 **Contact**: mail.easypro.tech@gmail.com  
-**Telegram**: @easyprotechaifactory 
+**Telegram**: @easyprotech 
 
 ## **🎉 РЕЗУЛЬТАТ GIT ОПЕРАЦИЙ:**
 

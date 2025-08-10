@@ -1,11 +1,17 @@
 #!/bin/bash
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 
 # Brabus Recon Suite (BRS) - Port Scanner Module
 # Comprehensive port scanning and service enumeration
 # company: EasyProTech LLC (www.easypro.tech)
 # repository: https://github.com/EPTLLC/brs
 # contact: mail.easypro.tech@gmail.com
-# telegram: https://t.me/easyprotechaifactory
+# telegram: https://t.me/easyprotech
 # author: brabus
 # version: 2.0
 
@@ -75,15 +81,18 @@ LANGUAGE_CONFIG="$CONFIG_DIR/language.conf"
 
 # Load language configuration
 if [ -f "$LANGUAGE_CONFIG" ]; then
+    # shellcheck disable=SC1090
     source "$LANGUAGE_CONFIG"
 else
-    CURRENT_LANGUAGE="ru"
+    CURRENT_LANGUAGE="en"
 fi
 
 # Load language file
 if [ -f "$LANGUAGES_DIR/$CURRENT_LANGUAGE.sh" ]; then
+    # shellcheck disable=SC1090
     source "$LANGUAGES_DIR/$CURRENT_LANGUAGE.sh"
 else
+    # shellcheck disable=SC1090
     source "$LANGUAGES_DIR/en.sh"
 fi
 
@@ -298,14 +307,14 @@ tor_scan() {
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_tor_scan_${TARGET//\//_}.txt"
     
     
-    # Check if Tor is available
+    # Require tor and proxychains to be installed by user/tools checker
     if ! command -v tor &> /dev/null; then
-        sudo apt install -y tor
+        echo -e "${YELLOW}tor is not installed. Please install via Settings → Check Tools or your package manager.${NC}"
+        return 1
     fi
-    
-    # Check if proxychains is available
     if ! command -v proxychains &> /dev/null; then
-        sudo apt install -y proxychains
+        echo -e "${YELLOW}proxychains is not installed. Please install via Settings → Check Tools or your package manager.${NC}"
+        return 1
     fi
     
     sudo systemctl start tor
@@ -323,9 +332,10 @@ mass_scan() {
     OUTPUT_FILE="$RESULTS_DIR/${TIMESTAMP}_mass_scan_${TARGET//\//_}.txt"
     
     
-    # Check if masscan is available
+    # Require masscan to be installed by user/tools checker
     if ! command -v masscan &> /dev/null; then
-        sudo apt install -y masscan
+        echo -e "${YELLOW}masscan is not installed. Please install via Settings → Check Tools or your package manager.${NC}"
+        return 1
     fi
     
     echo -n "Scan rate (packets per second, default 1000): "

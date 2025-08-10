@@ -1,11 +1,17 @@
 #!/bin/bash
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 
 # Brabus Recon Suite (BRS) - Network Discovery Module
 # Network reconnaissance and host enumeration script
 # company: EasyProTech LLC (www.easypro.tech)
 # repository: https://github.com/EPTLLC/brs
 # contact: mail.easypro.tech@gmail.com
-# telegram: https://t.me/easyprotechaifactory
+# telegram: https://t.me/easyprotech
 # author: brabus
 # version: 2.0
 
@@ -267,14 +273,25 @@ if ! check_tools; then
     exit 1
 fi
 
-# Interactive network selection
-select_network
+# Allow non-interactive selection via environment variable
+if [ -n "${LOCAL_NET:-}" ]; then
+    echo -e "${BLUE}$NET_VALIDATING_NETWORK${NC}"
+    if ! validate_network "$LOCAL_NET"; then
+        echo -e "${RED}$ERROR_INVALID_NETWORK${NC}"
+        exit 1
+    fi
+else
+    # Interactive network selection
+    select_network
+fi
 
 # Validate selected network
-echo -e "${BLUE}$NET_VALIDATING_NETWORK${NC}"
-if ! validate_network "$LOCAL_NET"; then
-    echo -e "${RED}$ERROR_INVALID_NETWORK${NC}"
-    exit 1
+if [ -z "${LOCAL_NET:-}" ]; then
+    echo -e "${BLUE}$NET_VALIDATING_NETWORK${NC}"
+    if ! validate_network "$LOCAL_NET"; then
+        echo -e "${RED}$ERROR_INVALID_NETWORK${NC}"
+        exit 1
+    fi
 fi
 
 # Check network size
@@ -314,7 +331,7 @@ if command -v nmap >/dev/null 2>&1; then
     
     # Wait for nmap to complete or timeout
     wait $nmap_pid 2>/dev/null
-    local nmap_exit_code=$?
+    nmap_exit_code=$?
     
     if [ $nmap_exit_code -eq 124 ]; then
         echo -e "${YELLOW}$TIMEOUT_TIMED_OUT_AFTER ${MAX_SCAN_TIME}s${NC}"
@@ -347,7 +364,7 @@ if command -v arp-scan >/dev/null 2>&1; then
     show_spinner $arp_pid "ARP scanning..."
     
     wait $arp_pid 2>/dev/null
-    local arp_exit_code=$?
+    arp_exit_code=$?
     
     if [ $arp_exit_code -eq 124 ]; then
         echo -e "${YELLOW}$TIMEOUT_TIMED_OUT_AFTER 60s${NC}"

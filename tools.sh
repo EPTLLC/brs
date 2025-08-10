@@ -1,7 +1,12 @@
 #!/bin/bash
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 # Brabus Recon Suite (BRS) - Tool Management Module
-# company: EasyProTech LLC (www.easypro.tech)
-# version: 1.0
+# version: 2.0
 
 # Color definitions (if not already defined)
 if [ -z "$RED" ]; then
@@ -53,6 +58,12 @@ REQUIRED_TOOLS=(
     "dirb:dirb - Web content scanner"
     "curl:curl - Command line HTTP client"
     "wget:wget - Network downloader"
+    "dig:dig - DNS utilities"
+    "whois:whois - Domain WHOIS lookup"
+    "jq:jq - JSON processor"
+    "tor:tor - The Onion Router"
+    "proxychains:proxychains - Proxy chaining"
+    "hping3:hping3 - TCP/IP packet generator"
 )
 
 # Optional tools (nice to have but not critical)

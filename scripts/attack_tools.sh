@@ -1,11 +1,17 @@
 #!/bin/bash
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 
 # Brabus Recon Suite (BRS) - Attack Tools Module
 # Network penetration testing and attack simulation tools
 # company: EasyProTech LLC (www.easypro.tech)
 # repository: https://github.com/EPTLLC/brs
 # contact: mail.easypro.tech@gmail.com
-# telegram: https://t.me/easyprotechaifactory
+# telegram: https://t.me/easyprotech
 # author: brabus
 # version: 2.0
 
@@ -447,13 +453,12 @@ dos_attack() {
     DURATION=${DURATION:-30}
     
     
-    # Use hping3 if available, otherwise install it
-    if command -v hping3 &> /dev/null; then
-        timeout "$DURATION" hping3 -S -p "$PORT" --flood "$TARGET"
-    else
-        sudo apt install -y hping3
-        timeout "$DURATION" hping3 -S -p "$PORT" --flood "$TARGET"
+    # Use hping3 if available
+    if ! command -v hping3 &> /dev/null; then
+        echo -e "${YELLOW}hping3 is not installed. Please install via Settings → Check Tools or your package manager.${NC}"
+        return 1
     fi
+    timeout "$DURATION" hping3 -S -p "$PORT" --flood "$TARGET"
     
     echo -e "${GREEN}$ATTACK_DOS_COMPLETE${NC}"
 }
@@ -462,7 +467,8 @@ arp_spoof() {
     echo -e "${BLUE}🕸️ $ATTACK_ARP_SPOOF${NC}"
     
     if ! command -v ettercap &> /dev/null; then
-        sudo apt install -y ettercap-text-only
+        echo -e "${YELLOW}ettercap is not installed. Please install via Settings → Check Tools or your package manager.${NC}"
+        return 1
     fi
     
     echo -n "$ATTACK_GATEWAY_PROMPT "
@@ -481,7 +487,8 @@ mitm_attack() {
     echo -e "${BLUE}🕵️ $ATTACK_MITM${NC}"
     
     if ! command -v ettercap &> /dev/null; then
-        sudo apt install -y ettercap-text-only
+        echo -e "${YELLOW}ettercap is not installed. Please install via Settings → Check Tools or your package manager.${NC}"
+        return 1
     fi
     
     echo -n "$ATTACK_INTERFACE_PROMPT "
@@ -554,7 +561,9 @@ EOL
     case $tool in
         1)
             if ! command -v dirb &> /dev/null; then
-                sudo apt install -y dirb
+                echo -e "${YELLOW}dirb is not installed. Please install via Settings → Check Tools or your package manager.${NC}"
+                rm -f /tmp/dirs.txt
+                return 1
             fi
             dirb "$BASE_URL" /tmp/dirs.txt | tee "$OUTPUT_FILE"
             ;;
@@ -579,7 +588,8 @@ wifi_attack() {
     echo -e "${BLUE}📡 WiFi attacks${NC}"
     
     if ! command -v aircrack-ng &> /dev/null; then
-        sudo apt install -y aircrack-ng
+        echo -e "${YELLOW}aircrack-ng is not installed. Please install via Settings → Check Tools or your package manager.${NC}"
+        return 1
     fi
     
     echo "$ATTACK_SELECT_MODE"
@@ -627,6 +637,7 @@ create_malicious_pdf() {
     echo -e "${BLUE}📄 Generate malicious PDF${NC}"
     
     if ! command -v msfvenom &> /dev/null; then
+        echo -e "${YELLOW}msfvenom (metasploit-framework) is not installed. Please install manually.${NC}"
         return 1
     fi
     

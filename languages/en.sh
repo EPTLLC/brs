@@ -1,6 +1,11 @@
 #!/bin/bash
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 # English language file for Brabus Recon Suite (BRS)
-# company: EasyProTech LLC (www.easypro.tech)
 # Language: English (en)
 
 # Global
@@ -13,6 +18,11 @@ MENU_SEPARATOR="=========================="
 MENU_NETWORK_DISCOVERY="Network Discovery"
 MENU_PORT_SCANNER="Port Scanning"
 MENU_DOMAIN_RECON="Domain Reconnaissance"
+# Domain Reconnaissance Menu labels
+DOMAIN_MENU_TITLE="DOMAIN RECONNAISSANCE"
+DOMAIN_MENU_SEPARATOR="=========================="
+DOMAIN_MENU_BACK="Back"
+DOMAIN_MENU_CHOOSE="Choose option"
 MENU_VULNERABILITY_SCANNER="Vulnerability Search"
 MENU_SYSINFO="System Information"
 MENU_ATTACK_TOOLS="Attack Tools"
@@ -128,7 +138,7 @@ LANG_RESTART_REQUIRED="Please restart the application to apply changes."
 COMPANY_NAME="EasyProTech LLC"
 COMPANY_NAME_EN="EasyProTech LLC"
 COMPANY_WEBSITE="www.easypro.tech"
-COMPANY_CONTACT_TELEGRAM="@easyprotechaifactory"
+COMPANY_CONTACT_TELEGRAM="@easyprotech"
 COMPANY_JURISDICTION="United States / United Kingdom"
 COMPANY_JURISDICTION_SECONDARY="Users must also comply with laws of their jurisdictions"
 

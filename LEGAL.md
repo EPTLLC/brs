@@ -16,12 +16,12 @@ This software is provided under a **Dual License Structure**: GPLv3 (default) an
 
 - **GPLv3 License**: For educational, research, personal, and open-source projects
 - **Commercial License**: For commercial entities, proprietary projects, closed-source derivatives
-- **Contact for Commercial Licensing**: @easyprotechaifactory (Telegram)
+- **Contact for Commercial Licensing**: @easyprotech (Telegram)
 
 ### License-Specific Terms:
 1. **NO UNAUTHORIZED USE** - Use only on networks and systems you own or have explicit written permission to test
 2. **GPLv3 COMPLIANCE** - If using under GPLv3, must comply with copyleft requirements and source disclosure
-3. **COMMERCIAL USE** - For commercial/proprietary use, obtain commercial license via @easyprotechaifactory
+3. **COMMERCIAL USE** - For commercial/proprietary use, obtain commercial license via @easyprotech
 4. **NO CRIMINAL USE** - Absolutely prohibited for any illegal activities under either license
 5. **ATTRIBUTION REQUIRED** - Must maintain all copyright notices and attributions
 
@@ -154,14 +154,14 @@ By using this software, you declare under penalty of perjury that:
 ### For Legal Inquiries:
 - **Company**: EasyProTech LLC (EasyProTech LLC)
 - **Website**: www.easypro.tech
-- **Contact**: @easyprotechaifactory (Telegram)
+- **Contact**: @easyprotech (Telegram)
 - **Jurisdiction**: Russian Federation
 
 ### Reporting Misuse:
 If you become aware of misuse of this software, please report it immediately to:
 - Local law enforcement agencies
 - Relevant cybersecurity authorities (FSB, MVD for Russian Federation)
-- Software maintainers via @easyprotechaifactory (Telegram)
+- Software maintainers via @easyprotech (Telegram)
 
 ### Cooperation with Authorities:
 EasyProTech LLC is ready for full cooperation with law enforcement agencies of the Russian Federation in identifying and prosecuting those who use this software unethically or illegally.
@@ -208,4 +208,4 @@ The disclaimer of warranties, limitation of liability, indemnification clause, a
 
 **This document constitutes a legally binding agreement. If you have questions about your rights or obligations, consult with qualified legal counsel familiar with cybersecurity and computer crime law.**
 
-**EasyProTech LLC | www.easypro.tech | @easyprotechaifactory | Brabus Recon Suite v2.0** 
+**EasyProTech LLC | www.easypro.tech | @easyprotech | Brabus Recon Suite v2.0** 
