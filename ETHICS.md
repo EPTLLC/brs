@@ -1,4 +1,10 @@
 # 🛡️ ETHICAL USAGE GUIDELINES
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 ## Brabus Recon Suite (BRS) - Responsible Security Testing
 
 ---

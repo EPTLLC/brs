@@ -1,4 +1,10 @@
 #!/bin/bash
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 
 # Brabus Recon Suite (BRS) - System Information Module
 # System reconnaissance and configuration analysis script
@@ -13,12 +19,21 @@
 SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPTS_DIR")"
 RESULTS_DIR="$PROJECT_DIR/results"
-CURRENT_LANGUAGE=$(cat "$PROJECT_DIR/configs/language.conf" 2>/dev/null || echo "en")
+
+# Load language configuration safely
+if [ -f "$PROJECT_DIR/configs/language.conf" ]; then
+    # shellcheck disable=SC1090
+    source "$PROJECT_DIR/configs/language.conf"
+else
+    CURRENT_LANGUAGE="en"
+fi
 
 # Load localization
 if [ -f "$PROJECT_DIR/languages/${CURRENT_LANGUAGE}.sh" ]; then
+    # shellcheck disable=SC1090
     source "$PROJECT_DIR/languages/${CURRENT_LANGUAGE}.sh"
 else
+    # shellcheck disable=SC1090
     source "$PROJECT_DIR/languages/en.sh"
 fi
 

@@ -9,6 +9,12 @@
 <sub>project: brabus recon suite (brs) | company: easyprotech llc (www.easypro.tech) | developer: brabus | created: 22.07.2025 03:06:28 | version: 2.0 | telegram: https://t.me/easyprotechaifactory</sub>
 
 # Brabus Recon Suite (BRS) v2.0
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 
 **Professional Network Reconnaissance & Penetration Testing Toolkit**
 
@@ -34,8 +40,8 @@ Advanced suite of tools for network reconnaissance, domain analysis, vulnerabili
 - **Enhanced Documentation** - Complete feature coverage and usage examples
 
 ### 📝 **Development Notes**
-- **Language Support**: Temporarily simplified to English-only during V2.0 development
-- **Legacy Compatibility**: V1.0 language files remain available in project history
+- **Language Support**: English-only during V2.0 stabilization (`CURRENT_LANGUAGE="en"`)
+- **Legacy Compatibility**: V1.0 language packs are excluded for now
 - **Future Roadmap**: Multi-language support will be restored in future releases
 
 ## 🚨 CRITICAL LEGAL WARNING
@@ -241,18 +247,14 @@ results/
 ## 🔧 Configuration Management
 
 ### Language Configuration (V2.0 Development)
-During V2.0 development, the system operates in **English-only mode** for:
-- Simplified development and testing
-- Consistent user experience
-- Reduced complexity during feature development
-
-**Note:** Multi-language support from V1.0 is preserved and will be restored in future releases. Language files are available in the project repository for reference.
+The system currently operates in **English-only mode** (config `CURRENT_LANGUAGE="en"`). Multi-language packs from v1.0 are excluded during v2.0 stabilization and may return later.
 
 ### Professional Interface Settings
-- Clean, emoji-free menu design
 - Consistent progress indication
 - Professional color schemes
 - Business-appropriate formatting
+  
+Note: During v2.0 development the console UI may include minimal emoji icons in status messages; the final business preset can disable them.
 
 ## 🚀 Usage Examples
 

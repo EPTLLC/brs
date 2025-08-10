@@ -1,4 +1,10 @@
 # 🔐 BRS Release Verification
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 
 **How to verify the authenticity and integrity of Brabus Recon Suite (BRS) releases**
 
@@ -82,12 +88,12 @@ sha512sum -c brs-v1.0.sha512
 
 | Field                | Value                                                              |
 | -------------------- | ------------------------------------------------------------------ |
-| **Key ID**           | `FECE5344ED1460A7`                                                 |
-| **Fingerprint**      | `24B2A5CC660558C27D3D7B63FECE5344ED1460A7`                         |
-| **Key SHA256**       | `8e8cba1ab634e752eaae0708c13de47ef27b266aa39bd6cdf5e6158ac489203d` |
+| **Key ID**           | `9E8DB39DCFFF51D8`                                                 |
+| **Fingerprint**      | `7A69B983BB4F308184FD21229E8DB39DCFFF51D8`                         |
+| **Key SHA256**       | `7e97952082610f28a4ce89d11f8f97a414ce80bf3146b5364f494805f6e23c73` |
 | **Key Type**         | RSA 4096-bit                                                       |
-| **Email (GPG only)** | `noreply@easypro.tech`                                             |
-| **Website**          | [https://www.easypro.tech/keys/brs/](https://www.easypro.tech/keys/brs/)   |
+| **Email (GPG only)** | `mail@easypro.tech`                                                |
+| **Website**          | [https://easypro.tech/keys/brs/](https://easypro.tech/keys/brs/)   |
 
 ---
 

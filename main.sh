@@ -1,4 +1,10 @@
 #!/bin/bash
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 
 # Brabus Recon Suite (BRS) - Main Control Script
 # Professional Network Reconnaissance & Penetration Testing Toolkit
@@ -16,6 +22,9 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0m'
+
+# BRS version
+BRS_VERSION="2.0"
 
 # Get script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -156,7 +165,7 @@ USER="$(whoami)"
 HOSTNAME="$(hostname)"
 IP_ADDRESS="$(hostname -I | awk '{print $1}' 2>/dev/null || echo 'unknown')"
 WORKING_DIR="$(pwd)"
-BRS_VERSION="1.0"
+            BRS_VERSION="$BRS_VERSION"
 LANGUAGE="$CURRENT_LANGUAGE"
 AGREEMENT_TYPE="FULL_ETHICS_CONSENT"
 LEGAL_DECLARATION="I declare under penalty of perjury that I will use BRS only on networks and systems I own or have explicit written authorization to test"
@@ -361,11 +370,11 @@ show_main_menu() {
     echo "$MENU_SEPARATOR"
     echo "1) $MENU_NETWORK_DISCOVERY"
     echo "2) $MENU_PORT_SCANNER"
-    echo "3) Domain Reconnaissance"
+    echo "3) $MENU_DOMAIN_RECON"
     echo "4) $MENU_VULNERABILITY_SCANNER"
     echo "5) $MENU_SYSINFO"
     echo "6) $MENU_ATTACK_TOOLS"
-    echo "7) Results"
+    echo "7) $MENU_VIEW_RESULTS"
     echo "8) $MENU_SETTINGS"
     echo "0) $MENU_EXIT"
     echo ""
@@ -519,7 +528,7 @@ show_help() {
     echo ""
     echo "Results saved to: $RESULTS_DIR"
     echo ""
-    echo "Tool requirements check available in option 10"
+    echo "Tool requirements check available in Settings → Check Tools"
 }
 
 # Create necessary directories

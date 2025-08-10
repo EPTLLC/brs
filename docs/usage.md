@@ -1,4 +1,10 @@
 # 📖 BRABUS RECON SUITE (BRS) - USAGE GUIDE
+# Project: Brabus Recon Suite (BRS)
+# Company: EasyProTech LLC (www.easypro.tech)
+# Dev: Brabus
+# Date: 2025-08-11 00:09:08 MSK
+# This file was modified
+# Telegram: https://t.me/easyprotech
 
 ---
 
@@ -215,13 +221,13 @@ All results are timestamped and saved in `results/`:
 
 ### Language Settings
 ```bash
-./main.sh → 7) Settings → 1) Language
+./main.sh → 8) Settings → 1) Language
 ```
-Supported languages: English, Russian, German, French, Spanish, Chinese, Turkish
+Current mode: English-only (v2.0 stabilization).
 
 ### Tool Dependencies
 ```bash
-./main.sh → 7) Settings → 2) Check Tools
+./main.sh → 8) Settings → 2) Check Tools
 ```
 Automatically checks and can install missing tools
 
