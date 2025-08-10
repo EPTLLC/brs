@@ -1,7 +1,7 @@
-# 🚀 Brabus Recon Suite (BRS) v1.0 - OFFICIAL RELEASE
+# 🚀 Brabus Recon Suite (BRS) v2.0 - OFFICIAL RELEASE
 
-**Release Date**: June 30, 2025  
-**Version**: 1.0  
+**Release Date**: July 23, 2025  
+**Version**: 2.0  
 **Company**: EasyProTech LLC (www.easypro.tech)  
 **Developer**: brabus  
 
@@ -14,11 +14,11 @@
 This release is **cryptographically signed** with GPG to ensure authenticity and integrity.
 
 **GPG Key Information**:
-- **Key ID**: `FECE5344ED1460A7`
-- **Fingerprint**: `24B2A5CC660558C27D3D7B63FECE5344ED1460A7`  
-- **Owner**: EasyProTech LLC <noreply@easypro.tech>
+- **Key ID**: `9E8DB39DCFFF51D8`
+- **Fingerprint**: `7A69B983BB4F308184FD21229E8DB39DCFFF51D8`  
+- **Owner**: EPT LLC <mail@easypro.tech>
 - **Key Type**: RSA 4096-bit
-- **Created**: June 30, 2025
+- **Created**: July 23, 2025
 - **BRS Keys**: https://www.easypro.tech/keys/brs/
 
 ### Verification Steps:
@@ -29,15 +29,15 @@ This release is **cryptographically signed** with GPG to ensure authenticity and
 gpg --keyserver keyserver.ubuntu.com --recv-keys [KEY_ID]
 
 # Method 2: From our website
-wget https://www.easypro.tech/keys/brs/brs-signing-key.asc
+wget https://www.easypro.tech/keys/brs/brs-signing-key-v2.0.asc
 wget https://www.easypro.tech/keys/brs/RELEASE_METADATA.txt
-gpg --import brs-signing-key.asc
+gpg --import brs-signing-key-v2.0.asc
 ```
 
 2. **Verify the signature**:
 ```bash
 # Verify the release archive
-gpg --verify brs-v1.0.tar.gz.sig brs-v1.0.tar.gz
+gpg --verify brs-v2.0.tar.gz.sig brs-v2.0.tar.gz
 
 # Expected output:
 # gpg: Signature made [DATE] using RSA key [KEY_ID]
@@ -62,23 +62,23 @@ gpg --fingerprint [KEY_ID]
 
 ### SHA256 Checksums:
 ```
-[TO_BE_GENERATED]  brs-v1.0.tar.gz
-[TO_BE_GENERATED]  brs-v1.0.zip
+[TO_BE_GENERATED]  brs-v2.0.tar.gz
+[TO_BE_GENERATED]  brs-v2.0.zip
 ```
 
 ### SHA512 Checksums:
 ```
-[TO_BE_GENERATED]  brs-v1.0.tar.gz
-[TO_BE_GENERATED]  brs-v1.0.zip
+[TO_BE_GENERATED]  brs-v2.0.tar.gz
+[TO_BE_GENERATED]  brs-v2.0.zip
 ```
 
 **Verify checksums**:
 ```bash
 # SHA256
-sha256sum -c brs-v1.0.sha256
+sha256sum -c brs-v2.0.sha256
 
 # SHA512  
-sha512sum -c brs-v1.0.sha512
+sha512sum -c brs-v2.0.sha512
 ```
 
 ---
@@ -175,4 +175,4 @@ sha512sum -c brs-v1.0.sha512
 
 **🛡️ This release represents a professional-grade penetration testing toolkit with comprehensive legal protections. Use responsibly and within the bounds of the law.**
 
-**EasyProTech LLC | Brabus Recon Suite v1.0 | June 30, 2025** 
+**EasyProTech LLC | Brabus Recon Suite v2.0 | July 23, 2025** 
