@@ -6,7 +6,7 @@
 ██████  ██   ██ ███████ 
 ```
 
-<sub>project: brabus recon suite (brs) | company: easyprotech llc (www.easypro.tech) | developer: brabus | created: 22.07.2025 03:06:28 | version: 2.1 | telegram: https://t.me/easyprotech</sub>
+<sub>project: brabus recon suite (brs) | company: easyprotech llc (www.easypro.tech)</sub>
 
 ### License
 
@@ -24,9 +24,9 @@
 
 **Company:** EasyProTech LLC (www.easypro.tech)  
 **Developer:** Brabus  
-**Created:** Mon 22 Jul 2025 03:06:28 MSK  
+**Created:** Mon 22 Jul 2025 03:06:28
 **Version:** 2.1  
-**Updated:** Sun 11 Aug 2025 01:20:17 MSK  
+**Updated:** Sun 11 Aug 2025 01:20:17
 **Telegram:** https://t.me/easyprotech
 
 ## Overview
@@ -35,9 +35,7 @@ Advanced suite of tools for network reconnaissance, domain analysis, vulnerabili
 
 > **Related Module:** [BRS-XSS](https://github.com/EPTLLC/brs-xss) — Next-Generation XSS Detection Suite. Standalone Python CLI for context-aware XSS scanning (HTML/JS context analysis, WAF detection/bypass heuristics, DOM analysis via Playwright, ML-ready scoring) with HTML/JSON/SARIF reports and easy integration into BRS results workflow.
 
-## 🚀 What's New in v2.1
-
-## 🚀 What's New in v2.1
+##  What's New in v2.1
 
 - Quick Start: Full Scan (auto) at launch
   - Enter → full local scan (System Info → Port Scan Aggressive → Vulnerability Comprehensive)
